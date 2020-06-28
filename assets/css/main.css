@@ -3368,11 +3368,12 @@ input, select, textarea {
 	  
 	  /* line 154, ../sass/timeline.sass */
 	  label {
-		font-size: 1.3em;
+		font-size: 1.0em;
 		position: absolute;
 		z-index: 100;
 		cursor: pointer;
-		top: 20px;
+		top: 5px;
+		left: 20px;
 		transition: transform 0.2s linear;
 	  }
 	  
