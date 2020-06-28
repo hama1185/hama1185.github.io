@@ -3351,7 +3351,7 @@ input, select, textarea {
 	  }
 	  /* line 135, ../sass/timeline.sass */
 	  .content:after {
-		border-right-color: #48b379;
+		border-right-color: #f98262;
 		border-width: 17px;
 		top: 50%;
 		margin-top: -17px;
@@ -3390,11 +3390,12 @@ input, select, textarea {
 	  /* line 182, ../sass/timeline.sass */
 	  .radio:checked + .relative .circle {
 		background: #f98262;
+		border:#f98262;
 	  }
 	  /* line 184, ../sass/timeline.sass */
 	  .radio:checked ~ .content {
 		max-height: 180px;
-		border-color: #48b379;
+		border-color: #f98262;
 		margin-right: 20px;
 		transform: translateX(20px);
 		transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
