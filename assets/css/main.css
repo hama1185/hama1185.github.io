@@ -3311,12 +3311,12 @@ input, select, textarea {
 	  /* line 79, ../sass/timeline.sass */
 	  .circle {
 		margin-top: -10px;
-		top: 50%;
-		left: -44px;
-		width: 10px;
-		height: 10px;
-		background: #48b379;
-		border: 5px solid #eee9dc;
+		top: 52%;
+		left: -41.5px;
+		width: 15px;
+		height: 15px;
+		background: #eee9dc;
+		border: 0.5px solid #eee9dc;
 		border-radius: 50%;
 		display: block;
 		position: absolute;
@@ -3394,7 +3394,7 @@ input, select, textarea {
 	  /* line 184, ../sass/timeline.sass */
 	  .radio:checked ~ .content {
 		max-height: 180px;
-		border-color: #eee9dc;
+		border-color: #48b379;
 		margin-right: 20px;
 		transform: translateX(20px);
 		transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
@@ -3402,7 +3402,7 @@ input, select, textarea {
 	  /* line 193, ../sass/timeline.sass */
 	  .radio:checked ~ .content p {
 		max-height: 200px;
-		color: #eee9dc;
+		color: #9e9d9a;
 		transition: color 0.3s linear 0.3s;
 	  }
 	  
@@ -3454,14 +3454,14 @@ input, select, textarea {
 		.content:after {
 		  border-bottom-color: #48b379;
 		  border-width: 20px;
-		  top: -20px;
+		  top: -10px;
 		  left: 50px;
 		  margin-left: -20px;
 		}
 		/* line 235, ../sass/timeline.sass */
 		.content p {
-		  font-size: 0.9em;
-		  line-height: 1.4;
+		  font-size: 0.8em;
+		  line-height: 1.2;
 		}
 	  
 		/* line 238, ../sass/timeline.sass */
