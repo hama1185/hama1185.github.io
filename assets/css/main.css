@@ -2593,11 +2593,11 @@ input, select, textarea {
 		justify-content: space-between;
 		background-color: #1f1815;
 		background-attachment: scroll,								scroll;
-		background-image: url("images/overlay.png"), url("../../images/cherry.jpg");
+		background-image: url("images/overlay.png"), url("../../images/yuhi_004.jpg");
 		background-position: top center,							top center;
 		background-repeat: repeat,								no-repeat;
-		background-size: auto,								100%;
-		color: rgba(255, 255, 255, 0.5);
+		background-size: auto,								cover;
+		color: rgba(255, 255, 255, 0.7);
 		height: 100%;
 		left: 0;
 		padding: 8em 4em;
@@ -3219,3 +3219,55 @@ input, select, textarea {
 			}
 
 	}
+
+	
+	.wrapper {
+		margin: 0 auto;
+		width: 90%;
+		margin-top: 15px;
+	  }
+	  
+	  .bar {
+		position: relative;
+		width: 100%;
+		height: 48px;
+		background: rgba(0, 0, 0, 0.3);
+		margin-bottom: 1.5rem;
+		border-radius: 5px;
+	  }
+	  
+	  .bar .bar-info {
+		border-radius: 5px;
+		padding: 0.75rem;
+		background: #fd7473;
+		color: white;
+		width: 10%;
+		position: relative;
+		height: 24px;
+		-webkit-transition: width 3.3s ease-in-out;
+		transition: width 3.3s ease-in-out;
+	  }
+	  
+	  .bar .bar-info .percent {
+		float: right;
+	  }
+	  
+	  .bar .bar-info.html {
+		background: -webkit-gradient(linear, left top, left bottom, from(#fd7473), to(#FC688E)), #fd7473;
+		background: linear-gradient(#fd7473, #FC688E), #fd7473;
+	  }
+	  
+	  .bar .bar-info.css {
+		background: -webkit-gradient(linear, left top, left bottom, from(#fec951), to(#FCAD44)), #fec951;
+		background: linear-gradient(#fec951, #FCAD44), #fec951;
+	  }
+	  
+	  .bar .bar-info.js {
+		background: -webkit-gradient(linear, left top, left bottom, from(#47b8e0), to(#28BEFA)), #47b8e0;
+		background: linear-gradient(#47b8e0, #28BEFA), #47b8e0;
+	  }
+	  
+	  .bar .bar-info.ps {
+		background: -webkit-gradient(linear, left top, left bottom, from(#9f68d0), to(#BB68D0)), #9f68d0;
+		background: linear-gradient(#9f68d0, #BB68D0), #9f68d0;
+	  }
