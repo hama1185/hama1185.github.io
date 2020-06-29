@@ -4,7 +4,7 @@ let sendMessage = () => {
     var email = result[7].firstElementChild.value;
     var textMessage = document.getElementsByClassName("col-12")[0].firstElementChild.value;
     if(name != "" && email != "" && textMessage != ""){
-        const url = 'https://hooks.slack.com/services/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';
+        const url = 'https://hooks.slack.com/services/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';
         var message = name + "さん\n" + "email:" + email + "\nMessage:" + textMessage;
         const data = {
             text: message
