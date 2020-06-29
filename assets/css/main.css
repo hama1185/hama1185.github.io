@@ -3442,23 +3442,20 @@ input, select, textarea {
 		.content:before, .content:after {
 		  border: solid transparent;
 		  bottom: 100%;
+		  transform: rotate(180deg);
 		}
 		/* line 223, ../sass/timeline.sass */
+		
 		.content:before {
-		  border-bottom-color: inherit;
-		  border-width: 17px;
-		  top: -16px;
-		  left: 50px;
-		  margin-left: -17px;
+			border-right-color: inherit;
+			border-width: 20px;
+			top: 50%;
+			margin-top: -20px;
 		}
+		  /* line 135, ../sass/timeline.sass */
+		  
 		/* line 229, ../sass/timeline.sass */
-		.content:after {
-		  border-bottom-color: #48b379;
-		  border-width: 20px;
-		  top: -10px;
-		  left: 50px;
-		  margin-left: -20px;
-		}
+		
 		/* line 235, ../sass/timeline.sass */
 		.content p {
 		  font-size: 0.8em;
