@@ -1,6 +1,5 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
-
 /*
 	Strata by HTML5 UP
 	html5up.net | @ajlkn
@@ -31,6 +30,8 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+  	margin: 0 auto;
+  	padding: 0 5%;
 }
 
 ol, ul {
@@ -2593,11 +2594,11 @@ input, select, textarea {
 		justify-content: space-between;
 		background-color: #1f1815;
 		background-attachment: scroll,								scroll;
-		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
-		background-position: top left,							top left;
+		background-image: url("images/overlay.png"), url("../../images/yuhi_004.jpg");
+		background-position: top center,							top center;
 		background-repeat: repeat,								no-repeat;
-		background-size: auto,								150%;
-		color: rgba(255, 255, 255, 0.5);
+		background-size: auto,								cover;
+		color: rgba(255, 255, 255, 0.7);
 		height: 100%;
 		left: 0;
 		padding: 8em 4em;
@@ -3219,3 +3220,254 @@ input, select, textarea {
 			}
 
 	}
+
+	
+	.wrapper {
+		margin: 0 auto;
+		width: 90%;
+		margin-top: 15px;
+	  }
+	  
+	  .bar {
+		position: relative;
+		width: 100%;
+		height: 48px;
+		background: rgba(0, 0, 0, 0.3);
+		margin-bottom: 1.5rem;
+		border-radius: 5px;
+	  }
+	  
+	  .bar .bar-info {
+		border-radius: 5px;
+		padding: 0.75rem;
+		background: #fd7473;
+		color: white;
+		width: 10%;
+		position: relative;
+		height: 24px;
+		-webkit-transition: width 3.3s ease-in-out;
+		transition: width 3.3s ease-in-out;
+	  }
+	  
+	  .bar .bar-info .percent {
+		float: right;
+	  }
+	  
+	  .bar .bar-info.cs {
+		background: -webkit-gradient(linear, left top, left bottom, from(#fd7473), to(#FC688E)), #fd7473;
+		background: linear-gradient(#fd7473, #FC688E), #fd7473;
+	  }
+	  
+	  .bar .bar-info.kt {
+		background: -webkit-gradient(linear, left top, left bottom, from(#fec951), to(#FCAD44)), #fec951;
+		background: linear-gradient(#fec951, #FCAD44), #fec951;
+	  }
+	  
+	  .bar .bar-info.c {
+		background: -webkit-gradient(linear, left top, left bottom, from(#8ce047), to(#81df35)), #8ce047;
+		background: linear-gradient(#8ce047, #81df35), #8ce047;
+	  }
+	  
+	  .bar .bar-info.py {
+		background: -webkit-gradient(linear, left top, left bottom, from(#47b8e0), to(#28BEFA)), #47b8e0;
+		background: linear-gradient(#47b8e0, #28BEFA), #47b8e0;
+	  }
+
+	  .bar .bar-info.java {
+		background: -webkit-gradient(linear, left top, left bottom, from(#4751e0), to(#3540dd)), #4751e0;
+		background: linear-gradient(#4751e0, #3540dd), #4751e0;
+	  }
+
+	  .bar .bar-info.js {
+		background: -webkit-gradient(linear, left top, left bottom, from(#9f68d0), to(#BB68D0)), #9f68d0;
+		background: linear-gradient(#9f68d0, #BB68D0), #9f68d0;
+	  }
+	  #timeline {
+		list-style: none;
+		margin: 50px 0 30px 120px;
+		padding-left: 30px;
+		border-left: 8px solid #eee9dc;
+	  }
+	  /* line 54, ../sass/timeline.sass */
+	  #timeline li {
+		margin: 40px 0;
+		position: relative;
+	  }
+	  /* line 63, ../sass/timeline.sass */
+	  #timeline p {
+		margin: 0 0 15px;
+	  }
+	  
+	  /* line 66, ../sass/timeline.sass */
+	  .date {
+		margin-top: -10px;
+		top: 50%;
+		left: -158px;
+		font-size: 0.95em;
+		line-height: 20px;
+		position: absolute;
+	  }
+	  
+	  /* line 79, ../sass/timeline.sass */
+	  .circle {
+		margin-top: -10px;
+		top: 52%;
+		left: -41.5px;
+		width: 15px;
+		height: 15px;
+		background: #eee9dc;
+		border: 0.5px solid #eee9dc;
+		border-radius: 50%;
+		display: block;
+		position: absolute;
+	  }
+	  
+	  /* line 97, ../sass/timeline.sass */
+	  .content {
+		max-height: 20px;
+		padding: 50px 20px 0;
+		border-color: transparent;
+		border-width: 2px;
+		border-style: solid;
+		border-radius: 0.5em;
+		position: relative;
+	  }
+	  /* line 113, ../sass/timeline.sass */
+	  .content:before, .content:after {
+		content: "";
+		width: 0;
+		height: 0;
+		border: solid transparent;
+		position: absolute;
+		pointer-events: none;
+		right: 100%;
+	  }
+	  /* line 124, ../sass/timeline.sass */
+	  .content:before {
+		border-right-color: inherit;
+		border-width: 20px;
+		top: 50%;
+		margin-top: -20px;
+	  }
+	  /* line 135, ../sass/timeline.sass */
+	  .content:after {
+		border-right-color: #f98262;
+		border-width: 17px;
+		top: 50%;
+		margin-top: -17px;
+	  }
+	  /* line 146, ../sass/timeline.sass */
+	  .content p {
+		max-height: 0;
+		color: transparent;
+		text-align: justify;
+		word-break: break-word;
+		hyphens: auto;
+		overflow: hidden;
+	  }
+	  
+	  /* line 154, ../sass/timeline.sass */
+	  label {
+		font-size: 1.0em;
+		position: absolute;
+		z-index: 100;
+		cursor: pointer;
+		top: 5px;
+		left: 20px;
+		transition: transform 0.2s linear;
+	  }
+	  
+	  /* line 171, ../sass/timeline.sass */
+	  .radio {
+		display: none;
+	  }
+	  
+	  /* line 175, ../sass/timeline.sass */
+	  .radio:checked + .relative label {
+		cursor: auto;
+		transform: translateX(42px);
+	  }
+	  /* line 182, ../sass/timeline.sass */
+	  .radio:checked + .relative .circle {
+		background: #f98262;
+		border:#f98262;
+	  }
+	  /* line 184, ../sass/timeline.sass */
+	  .radio:checked ~ .content {
+		max-height: 180px;
+		border-color: #f98262;
+		margin-right: 20px;
+		transform: translateX(20px);
+		transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
+	  }
+	  /* line 193, ../sass/timeline.sass */
+	  .radio:checked ~ .content p {
+		max-height: 200px;
+		color: #9e9d9a;
+		transition: color 0.3s linear 0.3s;
+	  }
+	  
+	  /* -------------------------------------
+	   * mobile phones (vertical version only)
+	   * ------------------------------------- */
+	  @media screen and (max-width: 767px) {
+		/* line 203, ../sass/timeline.sass */
+		#timeline {
+		  margin-left: 0;
+		  padding-left: 0;
+		  border-left: none;
+		}
+		/* line 207, ../sass/timeline.sass */
+		#timeline li {
+		  margin: 50px 0;
+		}
+	  
+		/* line 209, ../sass/timeline.sass */
+		label {
+		  width: 85%;
+		  font-size: 1.0em;
+		  white-space: nowrap;
+		  text-overflow: ellipsis;
+		  overflow: hidden;
+		  display: block;
+		  transform: translateX(18px);
+		}
+	  
+		/* line 217, ../sass/timeline.sass */
+		.content {
+		  padding-top: 45px;
+		  border-color: #eee9dc;
+		}
+		/* line 220, ../sass/timeline.sass */
+		.content:before, .content:after {
+		  border: solid transparent;
+		  bottom: 100%;
+		}
+		/* line 223, ../sass/timeline.sass */
+		.content:before {
+		  border-bottom-color: inherit;
+		  border-width: 17px;
+		  top: -16px;
+		  left: 50px;
+		  margin-left: -17px;
+		}
+		/* line 229, ../sass/timeline.sass */
+		.content:after {
+		  border-bottom-color: #48b379;
+		  border-width: 20px;
+		  top: -10px;
+		  left: 50px;
+		  margin-left: -20px;
+		}
+		/* line 235, ../sass/timeline.sass */
+		.content p {
+		  font-size: 0.8em;
+		  line-height: 1.2;
+		}
+	  
+		/* line 238, ../sass/timeline.sass */
+		.circle, .date {
+		  display: none;
+		}
+	  }
+	  
