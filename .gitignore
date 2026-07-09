@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Astro generated cache & types
+.astro/
+
+# OS / editor cruft
+.DS_Store
+*.log
