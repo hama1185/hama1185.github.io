@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "anyOf": [
+    {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "number"
+          },
+          "venue": {
+            "type": "object",
+            "properties": {
+              "short": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "conference",
+                  "journal",
+                  "domestic",
+                  "poster"
+                ]
+              }
+            },
+            "required": [
+              "short",
+              "type"
+            ]
+          },
+          "title": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string"
+              },
+              "ja": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "en"
+            ]
+          },
+          "authors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "self": {
+            "type": "string"
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "pdf": {
+                "type": "string"
+              },
+              "doi": {
+                "type": "string"
+              },
+              "video": {
+                "type": "string"
+              }
+            }
+          },
+          "award": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "year",
+          "venue",
+          "title",
+          "authors",
+          "self",
+          "links"
+        ]
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "number"
+          },
+          "venue": {
+            "type": "object",
+            "properties": {
+              "short": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "conference",
+                  "journal",
+                  "domestic",
+                  "poster"
+                ]
+              }
+            },
+            "required": [
+              "short",
+              "type"
+            ]
+          },
+          "title": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string"
+              },
+              "ja": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "en"
+            ]
+          },
+          "authors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "self": {
+            "type": "string"
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "pdf": {
+                "type": "string"
+              },
+              "doi": {
+                "type": "string"
+              },
+              "video": {
+                "type": "string"
+              }
+            }
+          },
+          "award": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "year",
+          "venue",
+          "title",
+          "authors",
+          "self",
+          "links"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Hanken Grotesk', 'Noto Sans JP', system-ui, sans-serif;
+    background: #E9E8E3;
+    color: #17201D;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: #2E6B4F; text-decoration: none; }
+  a:hover { color: #245741; }
+  p { margin: 0; }
+  h1, h2, h3, h4, h5 { margin: 0; font-weight: 600; }
+  ul { margin: 0; }
+</style>
+</helmet>
+
+<section id="doc" style="padding:72px 64px 120px; display:flex; flex-direction:column; align-items:center; gap:72px;">
+
+  <!-- ===================== STYLE GUIDE ===================== -->
+  <div style="width:100%; max-width:1000px;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#8a908c; margin-bottom:16px;">Style Guide · Slate &amp; Green</div>
+    <div style="background:#FFFFFF; border:1px solid #DFE4E3; border-radius:8px; padding:56px; box-shadow:0 1px 3px rgba(23,32,29,0.05), 0 16px 40px rgba(23,32,29,0.06);">
+
+      <h2 style="font-size:26px; letter-spacing:-0.01em;">Design System</h2>
+      <p style="margin-top:10px; font-size:15px; line-height:1.75; color:#616B67; max-width:560px;">研究ポートフォリオのための基礎スタイル。静かなエディトリアル、余白を効かせた読みやすさ、アクセントは最小限。</p>
+
+      <!-- Colors -->
+      <div style="margin-top:44px; padding-top:36px; border-top:1px solid #EDF1F0;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#949C98; margin-bottom:20px;">01 — Color</div>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+          <div><div style="height:72px; border-radius:6px; background:#F7F9F9; border:1px solid #DFE4E3;"></div><div style="margin-top:9px; font-size:12.5px; font-weight:600;">Page</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98;">#F7F9F9</div></div>
+          <div><div style="height:72px; border-radius:6px; background:#FFFFFF; border:1px solid #DFE4E3;"></div><div style="margin-top:9px; font-size:12.5px; font-weight:600;">Surface</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98;">#FFFFFF</div></div>
+          <div><div style="height:72px; border-radius:6px; background:#EDF1F0; border:1px solid #DFE4E3;"></div><div style="margin-top:9px; font-size:12.5px; font-weight:600;">Subtle</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98;">#EDF1F0</div></div>
+          <div><div style="height:72px; border-radius:6px; background:#DFE4E3;"></div><div style="margin-top:9px; font-size:12.5px; font-weight:600;">Border</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98;">#DFE4E3</div></div>
+          <div><div style="height:72px; border-radius:6px; background:#17201D;"></div><div style="margin-top:9px; font-size:12.5px; font-weight:600;">Ink / Text</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98;">#17201D</div></div>
+          <div><div style="height:72px; border-radius:6px; background:#616B67;"></div><div style="margin-top:9px; font-size:12.5px; font-weight:600;">Muted</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98;">#616B67</div></div>
+          <div><div style="height:72px; border-radius:6px; background:#2E6B4F;"></div><div style="margin-top:9px; font-size:12.5px; font-weight:600;">Accent</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98;">#2E6B4F</div></div>
+          <div><div style="height:72px; border-radius:6px; background:#245741;"></div><div style="margin-top:9px; font-size:12.5px; font-weight:600;">Accent hover</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98;">#245741</div></div>
+        </div>
+        <p style="margin-top:16px; font-size:12.5px; line-height:1.65; color:#949C98;">アクセント（緑）はリンク・アクティブ状態・主要ボタンのみ。面には使わず、点で効かせる。</p>
+      </div>
+
+      <!-- Type -->
+      <div style="margin-top:44px; padding-top:36px; border-top:1px solid #EDF1F0;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#949C98; margin-bottom:20px;">02 — Type Scale</div>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <div style="display:flex; align-items:baseline; gap:20px; border-bottom:1px solid #F1F4F3; padding-bottom:16px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; width:130px; flex-shrink:0;">Display · 44/600</span><span style="font-size:44px; font-weight:600; letter-spacing:-0.02em; line-height:1;">Haptics</span></div>
+          <div style="display:flex; align-items:baseline; gap:20px; border-bottom:1px solid #F1F4F3; padding-bottom:16px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; width:130px; flex-shrink:0;">H1 · 30/600</span><span style="font-size:30px; font-weight:600; letter-spacing:-0.01em;">Research overview</span></div>
+          <div style="display:flex; align-items:baseline; gap:20px; border-bottom:1px solid #F1F4F3; padding-bottom:16px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; width:130px; flex-shrink:0;">H2 · 21/600</span><span style="font-size:21px; font-weight:600;">Pseudo-Haptics</span></div>
+          <div style="display:flex; align-items:baseline; gap:20px; border-bottom:1px solid #F1F4F3; padding-bottom:16px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; width:130px; flex-shrink:0;">Body · 16/1.75</span><span style="font-size:16px; line-height:1.75; color:#333c38; max-width:440px;">触覚提示による immersive なインタラクションの研究。読みやすさを最優先に、行間はゆったりと。</span></div>
+          <div style="display:flex; align-items:baseline; gap:20px; border-bottom:1px solid #F1F4F3; padding-bottom:16px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; width:130px; flex-shrink:0;">Small · 13/1.6</span><span style="font-size:13px; line-height:1.6; color:#616B67;">Authors, captions, metadata</span></div>
+          <div style="display:flex; align-items:baseline; gap:20px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; width:130px; flex-shrink:0;">Mono label · 11</span><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#616B67;">2025 · IEEE World Haptics</span></div>
+        </div>
+      </div>
+
+      <!-- Spacing -->
+      <div style="margin-top:44px; padding-top:36px; border-top:1px solid #EDF1F0;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#949C98; margin-bottom:20px;">03 — Spacing &amp; Radius</div>
+        <div style="display:flex; align-items:flex-end; gap:14px;">
+          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:4px; height:4px; background:#2E6B4F;"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#949C98;">4</span></div>
+          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:8px; height:8px; background:#2E6B4F;"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#949C98;">8</span></div>
+          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:16px; height:16px; background:#2E6B4F;"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#949C98;">16</span></div>
+          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:24px; height:24px; background:#2E6B4F;"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#949C98;">24</span></div>
+          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:40px; height:40px; background:#2E6B4F;"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#949C98;">40</span></div>
+          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:64px; height:64px; background:#2E6B4F;"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#949C98;">64</span></div>
+          <div style="display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:96px; height:96px; background:#2E6B4F;"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#949C98;">96</span></div>
+        </div>
+        <p style="margin-top:18px; font-size:12.5px; line-height:1.7; color:#949C98; max-width:560px;">8px グリッド。セクション間 64–96、要素間 16–24。角丸は 6px（部品）／ 8px（カード・面）で統一。</p>
+      </div>
+
+      <!-- Buttons -->
+      <div style="margin-top:44px; padding-top:36px; border-top:1px solid #EDF1F0;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#949C98; margin-bottom:20px;">04 — Buttons &amp; Links</div>
+        <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+          <span style="background:#2E6B4F; color:#fff; font-size:14px; font-weight:500; padding:11px 20px; border-radius:6px;">Primary</span>
+          <span style="background:transparent; color:#17201D; border:1px solid #CFD6D4; font-size:14px; font-weight:500; padding:11px 20px; border-radius:6px;">Secondary</span>
+          <span style="color:#2E6B4F; font-size:14px; font-weight:500; padding:11px 4px;">Ghost / text</span>
+          <span style="color:#2E6B4F; font-size:14px; font-weight:500; border-bottom:1px solid #2E6B4F; padding-bottom:1px;">Inline link</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; border:1px solid #C6D6CE; padding:5px 11px; border-radius:5px;">PDF</span>
+        </div>
+      </div>
+
+      <!-- Nav + form -->
+      <div style="margin-top:44px; padding-top:36px; border-top:1px solid #EDF1F0;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#949C98; margin-bottom:20px;">05 — Navigation &amp; Inputs</div>
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 22px; background:#F7F9F9; border:1px solid #DFE4E3; border-radius:8px;">
+          <span style="font-weight:600; font-size:15px; letter-spacing:-0.01em;">Hamazaki</span>
+          <div style="display:flex; align-items:center; gap:22px; font-size:13.5px; color:#616B67;">
+            <span style="color:#17201D; border-bottom:2px solid #2E6B4F; padding-bottom:4px;">Research</span>
+            <span>Publications</span>
+            <span>CV</span>
+            <span>Contact</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; border-left:1px solid #DFE4E3; padding-left:16px;">EN / 日本語</span>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; margin-top:16px;">
+          <div style="flex:1; background:#FFFFFF; border:1px solid #DFE4E3; border-radius:6px; padding:11px 14px; font-size:13.5px; color:#949C98;">Your email</div>
+          <div style="background:#2E6B4F; color:#fff; font-size:13.5px; font-weight:500; padding:11px 20px; border-radius:6px;">Send</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================== HOME ===================== -->
+  <div style="width:100%; max-width:1160px;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#8a908c; margin-bottom:16px;">Home · /</div>
+    <div style="border-radius:10px; overflow:hidden; border:1px solid #DFE4E3; box-shadow:0 1px 3px rgba(23,32,29,0.05), 0 20px 50px rgba(23,32,29,0.08);">
+      <!-- chrome -->
+      <div style="background:#EDF1F0; border-bottom:1px solid #DFE4E3; height:42px; display:flex; align-items:center; padding:0 16px; gap:8px;">
+        <div style="width:11px; height:11px; border-radius:50%; background:#D3DAD8;"></div>
+        <div style="width:11px; height:11px; border-radius:50%; background:#D3DAD8;"></div>
+        <div style="width:11px; height:11px; border-radius:50%; background:#D3DAD8;"></div>
+        <div style="margin-left:14px; background:#F7F9F9; border:1px solid #DFE4E3; border-radius:6px; height:26px; flex:1; max-width:340px; display:flex; align-items:center; padding:0 12px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98;">hamazaki.github.io</span></div>
+      </div>
+      <!-- page -->
+      <div style="background:#F7F9F9;">
+        <nav style="display:flex; align-items:center; justify-content:space-between; padding:24px 56px; border-bottom:1px solid #DFE4E3; background:#F7F9F9;">
+          <span style="font-weight:600; font-size:16px; letter-spacing:-0.01em;">Hamazaki</span>
+          <div style="display:flex; align-items:center; gap:24px; font-size:14px; color:#616B67;">
+            <span>Research</span><span>Publications</span><span>CV</span><span>Contact</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; border-left:1px solid #DFE4E3; padding-left:18px;">EN / 日本語</span>
+          </div>
+        </nav>
+
+        <!-- hero -->
+        <div style="padding:80px 56px; display:flex; gap:56px; align-items:flex-start;">
+          <div style="flex:1;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#2E6B4F; margin-bottom:20px;">Haptics · VR · HCI</div>
+            <h1 style="font-size:46px; font-weight:600; letter-spacing:-0.02em; line-height:1.08;">Ren Hamazaki</h1>
+            <p style="margin-top:10px; font-size:17px; color:#616B67;">PhD Student, Kajimoto Lab — The University of Electro-Communications</p>
+            <p style="margin-top:28px; font-size:16.5px; line-height:1.8; color:#333c38; max-width:560px;">I design haptic interfaces that let people feel virtual forces and textures. My work spans pseudo-haptics, electro-tactile display, and wearable devices for immersive interaction.</p>
+            <div style="margin-top:32px; display:flex; gap:14px; align-items:center;">
+              <span style="background:#2E6B4F; color:#fff; font-size:14px; font-weight:500; padding:11px 22px; border-radius:6px;">View research</span>
+              <span style="color:#2E6B4F; font-size:14px; font-weight:500; border-bottom:1px solid #2E6B4F; padding-bottom:1px;">Google Scholar ↗</span>
+            </div>
+          </div>
+          <div style="width:240px; flex-shrink:0;">
+            <div style="width:240px; height:300px; border-radius:8px; background:repeating-linear-gradient(135deg,#EDF1F0,#EDF1F0 10px,#E4E9E8 10px,#E4E9E8 20px); border:1px solid #DFE4E3; display:flex; align-items:center; justify-content:center;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9BA5A1;">portrait</span></div>
+          </div>
+        </div>
+
+        <!-- about / 経歴 -->
+        <div style="padding:56px; border-top:1px solid #DFE4E3; display:grid; grid-template-columns:1.4fr 1fr; gap:56px;">
+          <div>
+            <h2 style="font-size:22px; letter-spacing:-0.01em;">About</h2>
+            <p style="margin-top:18px; font-size:16px; line-height:1.85; color:#333c38;">I am a PhD student at the Kajimoto Lab, UEC, working on haptic interfaces for immersive interaction. My interest is in how the body perceives force and texture, and how minimal hardware can render convincing sensations.</p>
+            <p style="margin-top:16px; font-size:15px; line-height:1.85; color:#616B67;">触覚提示と知覚の関係に関心があり、心理物理実験とウェアラブルデバイスの試作を往復しながら研究を進めています。</p>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#949C98; margin-bottom:20px;">経歴 / Timeline</div>
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div style="display:flex; gap:16px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; flex-shrink:0; width:60px;">2024 –</span><span style="font-size:14px; line-height:1.6; color:#333c38;">PhD, UEC — Kajimoto Lab</span></div>
+              <div style="display:flex; gap:16px; border-top:1px solid #EDF1F0; padding-top:16px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; flex-shrink:0; width:60px;">2022</span><span style="font-size:14px; line-height:1.6; color:#333c38;">MEng, UEC</span></div>
+              <div style="display:flex; gap:16px; border-top:1px solid #EDF1F0; padding-top:16px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; flex-shrink:0; width:60px;">2018</span><span style="font-size:14px; line-height:1.6; color:#333c38;">BEng, UEC</span></div>
+              <div style="border-top:1px solid #EDF1F0; padding-top:16px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#2E6B4F;">Full CV ↗</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- recent pubs + news -->
+        <div style="padding:56px; border-top:1px solid #DFE4E3; display:grid; grid-template-columns:1.4fr 1fr; gap:56px;">
+          <div>
+            <h2 style="font-size:22px; letter-spacing:-0.01em; margin-bottom:24px;">Recent publications</h2>
+            <div style="display:flex; flex-direction:column; gap:22px;">
+              <div style="display:flex; flex-direction:column; gap:5px;">
+                <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; letter-spacing:0.04em;">2025 · IEEE WORLD HAPTICS</div>
+                <a href="#doc" style="font-size:15.5px; font-weight:600; color:#17201D; line-height:1.4;" style-hover="color:#2E6B4F;">Rendering Phantom Sensation on the Forearm via Asymmetric Vibration</a>
+                <div style="font-size:13px; color:#616B67;"><strong style="color:#17201D; font-weight:600;">R. Hamazaki</strong>, K. Mizoguchi, H. Kajimoto</div>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:5px;">
+                <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; letter-spacing:0.04em;">2025 · SIGGRAPH POSTER</div>
+                <a href="#doc" style="font-size:15.5px; font-weight:600; color:#17201D; line-height:1.4;" style-hover="color:#2E6B4F;">Perceived Weight Modulation using Visual–Haptic Conflict in VR</a>
+                <div style="font-size:13px; color:#616B67;"><strong style="color:#17201D; font-weight:600;">R. Hamazaki</strong>, H. Kajimoto</div>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:5px;">
+                <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; letter-spacing:0.04em;">2024 · VRSJ ANNUAL</div>
+                <a href="#doc" style="font-size:15.5px; font-weight:600; color:#17201D; line-height:1.4;" style-hover="color:#2E6B4F;">電気触覚ディスプレイによる材質感提示の基礎検討</a>
+                <div style="font-size:13px; color:#616B67;"><strong style="color:#17201D; font-weight:600;">濱口 蓮</strong>, 梶本 裕之</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 style="font-size:22px; letter-spacing:-0.01em; margin-bottom:24px;">News</h2>
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div style="display:flex; gap:14px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; flex-shrink:0; width:64px;">2025.07</span><span style="font-size:13.5px; line-height:1.6; color:#333c38;">World Haptics 2025 で発表しました。</span></div>
+              <div style="display:flex; gap:14px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; flex-shrink:0; width:64px;">2025.03</span><span style="font-size:13.5px; line-height:1.6; color:#333c38;">Haptics Symposium にて口頭発表。</span></div>
+              <div style="display:flex; gap:14px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; flex-shrink:0; width:64px;">2024.09</span><span style="font-size:13.5px; line-height:1.6; color:#333c38;">日本VR学会大会で発表しました。</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- footer -->
+        <div style="padding:40px 56px; border-top:1px solid #DFE4E3; background:#EDF1F0; display:flex; align-items:center; justify-content:space-between;">
+          <span style="font-size:13px; color:#616B67;">© 2026 Ren Hamazaki</span>
+          <div style="display:flex; gap:20px; font-size:13px; color:#2E6B4F;"><span>Scholar</span><span>GitHub</span><span>Email</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== RESEARCH ===================== -->
+  <div style="width:100%; max-width:1160px;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#8a908c; margin-bottom:16px;">Research · /research</div>
+    <div style="border-radius:10px; overflow:hidden; border:1px solid #DFE4E3; box-shadow:0 1px 3px rgba(23,32,29,0.05), 0 20px 50px rgba(23,32,29,0.08);">
+      <div style="background:#EDF1F0; border-bottom:1px solid #DFE4E3; height:42px; display:flex; align-items:center; padding:0 16px; gap:8px;">
+        <div style="width:11px; height:11px; border-radius:50%; background:#D3DAD8;"></div>
+        <div style="width:11px; height:11px; border-radius:50%; background:#D3DAD8;"></div>
+        <div style="width:11px; height:11px; border-radius:50%; background:#D3DAD8;"></div>
+        <div style="margin-left:14px; background:#F7F9F9; border:1px solid #DFE4E3; border-radius:6px; height:26px; flex:1; max-width:340px; display:flex; align-items:center; padding:0 12px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98;">hamazaki.github.io/research</span></div>
+      </div>
+      <div style="background:#F7F9F9;">
+        <nav style="display:flex; align-items:center; justify-content:space-between; padding:24px 56px; border-bottom:1px solid #DFE4E3;">
+          <span style="font-weight:600; font-size:16px; letter-spacing:-0.01em;">Hamazaki</span>
+          <div style="display:flex; align-items:center; gap:24px; font-size:14px; color:#616B67;">
+            <span style="color:#17201D; border-bottom:2px solid #2E6B4F; padding-bottom:4px;">Research</span><span>Publications</span><span>CV</span><span>Contact</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; border-left:1px solid #DFE4E3; padding-left:18px;">EN / 日本語</span>
+          </div>
+        </nav>
+
+        <div style="padding:72px 56px 40px; max-width:720px;">
+          <h1 style="font-size:36px; font-weight:600; letter-spacing:-0.02em;">Research</h1>
+          <p style="margin-top:16px; font-size:16.5px; line-height:1.8; color:#333c38;">How can we make virtual objects feel real? My research builds haptic interfaces that render force, weight, and texture — combining perceptual science with wearable hardware.</p>
+        </div>
+
+        <div style="padding:20px 56px 56px; display:flex; flex-direction:column; gap:20px;">
+          <div style="background:#FFFFFF; border:1px solid #DFE4E3; border-radius:8px; padding:32px; display:grid; grid-template-columns:1fr 200px; gap:32px; align-items:center;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#2E6B4F; margin-bottom:12px;">Theme 01</div>
+              <h2 style="font-size:23px; letter-spacing:-0.01em;">Pseudo-Haptics</h2>
+              <p style="margin-top:12px; font-size:15px; line-height:1.75; color:#616B67; max-width:520px;">視覚と触覚の不一致を利用し、デバイスの物理的な力なしに重さ・抵抗感・硬さを知覚的に生み出す。VR での軽量な力覚提示を目指す。</p>
+              <div style="margin-top:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F;">4 papers · 2 demos ↗</div>
+            </div>
+            <div style="height:150px; border-radius:6px; background:repeating-linear-gradient(135deg,#EDF1F0,#EDF1F0 10px,#E4E9E8 10px,#E4E9E8 20px); border:1px solid #DFE4E3; display:flex; align-items:center; justify-content:center;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9BA5A1;">figure</span></div>
+          </div>
+          <div style="background:#FFFFFF; border:1px solid #DFE4E3; border-radius:8px; padding:32px; display:grid; grid-template-columns:1fr 200px; gap:32px; align-items:center;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#2E6B4F; margin-bottom:12px;">Theme 02</div>
+              <h2 style="font-size:23px; letter-spacing:-0.01em;">Electro-Tactile Display</h2>
+              <p style="margin-top:12px; font-size:15px; line-height:1.75; color:#616B67; max-width:520px;">皮膚への電気刺激を精密に制御し、材質感やテクスチャを提示する。刺激波形と知覚の対応づけを実験的に明らかにする。</p>
+              <div style="margin-top:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F;">3 papers ↗</div>
+            </div>
+            <div style="height:150px; border-radius:6px; background:repeating-linear-gradient(135deg,#EDF1F0,#EDF1F0 10px,#E4E9E8 10px,#E4E9E8 20px); border:1px solid #DFE4E3; display:flex; align-items:center; justify-content:center;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9BA5A1;">figure</span></div>
+          </div>
+        </div>
+
+        <div style="padding:56px; border-top:1px solid #DFE4E3;">
+          <h2 style="font-size:22px; letter-spacing:-0.01em; margin-bottom:28px;">Projects</h2>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+            <div style="background:#FFFFFF; border:1px solid #DFE4E3; border-radius:8px; overflow:hidden;">
+              <div style="height:150px; background:repeating-linear-gradient(135deg,#EDF1F0,#EDF1F0 10px,#E4E9E8 10px,#E4E9E8 20px); display:flex; align-items:center; justify-content:center;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9BA5A1;">demo photo</span></div>
+              <div style="padding:20px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#949C98; margin-bottom:8px;">2025 · WEARABLE</div><h3 style="font-size:16.5px;">Asymmetric Vibration Cuff</h3><p style="margin-top:7px; font-size:13px; line-height:1.65; color:#616B67;">前腕に牽引感を提示する装着型デバイス。</p><div style="margin-top:12px; padding-top:12px; border-top:1px solid #EDF1F0; display:flex; align-items:center; gap:8px;"><span style="width:5px; height:5px; border-radius:50%; background:#2E6B4F; flex-shrink:0;"></span><span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#2E6B4F; line-height:1.4;">Best Demo Award · WHC 2025</span></div></div>
+            </div>
+            <div style="background:#FFFFFF; border:1px solid #DFE4E3; border-radius:8px; overflow:hidden;">
+              <div style="height:150px; background:repeating-linear-gradient(135deg,#EDF1F0,#EDF1F0 10px,#E4E9E8 10px,#E4E9E8 20px); display:flex; align-items:center; justify-content:center;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9BA5A1;">demo photo</span></div>
+              <div style="padding:20px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#949C98; margin-bottom:8px;">2024 · VR</div><h3 style="font-size:16.5px;">Weight Illusion Toolkit</h3><p style="margin-top:7px; font-size:13px; line-height:1.65; color:#616B67;">VR で重さ知覚を操作する実験基盤。</p><div style="margin-top:12px; padding-top:12px; border-top:1px solid #EDF1F0; display:flex; align-items:center; gap:8px;"><span style="width:5px; height:5px; border-radius:50%; background:#2E6B4F; flex-shrink:0;"></span><span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#2E6B4F; line-height:1.4;">Best Presentation · SICE SI 2025</span></div></div>
+            </div>
+            <div style="background:#FFFFFF; border:1px solid #DFE4E3; border-radius:8px; overflow:hidden;">
+              <div style="height:150px; background:repeating-linear-gradient(135deg,#EDF1F0,#EDF1F0 10px,#E4E9E8 10px,#E4E9E8 20px); display:flex; align-items:center; justify-content:center;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9BA5A1;">demo photo</span></div>
+              <div style="padding:20px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#949C98; margin-bottom:8px;">2024 · HARDWARE</div><h3 style="font-size:16.5px;">Electro-Tactile Pad</h3><p style="margin-top:7px; font-size:13px; line-height:1.65; color:#616B67;">材質感提示のための電極アレイ試作。</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding:56px; border-top:1px solid #DFE4E3; background:#EDF1F0;">
+          <h2 style="font-size:22px; letter-spacing:-0.01em;">Personal / Side projects</h2>
+          <p style="margin-top:10px; font-size:14.5px; line-height:1.7; color:#616B67; max-width:520px;">研究とは別に、趣味で制作したもの。その中から評価いただいたものを掲載しています。</p>
+          <div style="margin-top:28px; display:flex; gap:20px; flex-wrap:wrap;">
+            <div style="width:352px; background:#FFFFFF; border:1px solid #DFE4E3; border-radius:8px; overflow:hidden;">
+              <div style="height:150px; background:repeating-linear-gradient(135deg,#EDF1F0,#EDF1F0 10px,#E4E9E8 10px,#E4E9E8 20px); display:flex; align-items:center; justify-content:center;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#9BA5A1;">project shot</span></div>
+              <div style="padding:20px;">
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#616B67; background:#EDF1F0; border:1px solid #DFE4E3; padding:2px 8px; border-radius:4px;">Fan</span><span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#949C98;">2024</span></div>
+                <h3 style="font-size:16.5px;">Project title</h3>
+                <p style="margin-top:7px; font-size:13px; line-height:1.65; color:#616B67;">個人制作の概要をここに。何を作ったか・何が面白いかを一言で。</p>
+                <div style="margin-top:12px; padding-top:12px; border-top:1px solid #EDF1F0; display:flex; align-items:center; gap:8px;"><span style="width:5px; height:5px; border-radius:50%; background:#2E6B4F; flex-shrink:0;"></span><span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#2E6B4F; line-height:1.4;">Award name · 2024</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:40px 56px; border-top:1px solid #DFE4E3; background:#EDF1F0; display:flex; align-items:center; justify-content:space-between;">
+          <span style="font-size:13px; color:#616B67;">© 2026 Ren Hamazaki</span>
+          <div style="display:flex; gap:20px; font-size:13px; color:#2E6B4F;"><span>Scholar</span><span>GitHub</span><span>Email</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== PUBLICATIONS ===================== -->
+  <div style="width:100%; max-width:1000px;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#8a908c; margin-bottom:16px;">Publications · /publications</div>
+    <div style="border-radius:10px; overflow:hidden; border:1px solid #DFE4E3; box-shadow:0 1px 3px rgba(23,32,29,0.05), 0 20px 50px rgba(23,32,29,0.08);">
+      <div style="background:#EDF1F0; border-bottom:1px solid #DFE4E3; height:42px; display:flex; align-items:center; padding:0 16px; gap:8px;">
+        <div style="width:11px; height:11px; border-radius:50%; background:#D3DAD8;"></div>
+        <div style="width:11px; height:11px; border-radius:50%; background:#D3DAD8;"></div>
+        <div style="width:11px; height:11px; border-radius:50%; background:#D3DAD8;"></div>
+        <div style="margin-left:14px; background:#F7F9F9; border:1px solid #DFE4E3; border-radius:6px; height:26px; flex:1; max-width:340px; display:flex; align-items:center; padding:0 12px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98;">hamazaki.github.io/publications</span></div>
+      </div>
+      <div style="background:#F7F9F9;">
+        <nav style="display:flex; align-items:center; justify-content:space-between; padding:24px 48px; border-bottom:1px solid #DFE4E3;">
+          <span style="font-weight:600; font-size:16px; letter-spacing:-0.01em;">Hamazaki</span>
+          <div style="display:flex; align-items:center; gap:24px; font-size:14px; color:#616B67;">
+            <span>Research</span><span style="color:#17201D; border-bottom:2px solid #2E6B4F; padding-bottom:4px;">Publications</span><span>CV</span><span>Contact</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; border-left:1px solid #DFE4E3; padding-left:18px;">EN / 日本語</span>
+          </div>
+        </nav>
+
+        <div style="padding:72px 48px 32px;">
+          <h1 style="font-size:36px; font-weight:600; letter-spacing:-0.02em;">Publications</h1>
+          <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
+            <span style="font-size:13px; font-weight:500; color:#fff; background:#2E6B4F; padding:7px 15px; border-radius:20px;">All</span>
+            <span style="font-size:13px; color:#616B67; background:#FFFFFF; border:1px solid #DFE4E3; padding:7px 15px; border-radius:20px;">International</span>
+            <span style="font-size:13px; color:#616B67; background:#FFFFFF; border:1px solid #DFE4E3; padding:7px 15px; border-radius:20px;">Domestic</span>
+            <span style="font-size:13px; color:#616B67; background:#FFFFFF; border:1px solid #DFE4E3; padding:7px 15px; border-radius:20px;">Journal</span>
+          </div>
+        </div>
+
+        <div style="padding:20px 48px 56px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:500; letter-spacing:0.08em; color:#949C98; padding-bottom:14px; border-bottom:1px solid #DFE4E3;">2025</div>
+          <div style="display:flex; flex-direction:column;">
+            <div style="padding:24px 0; border-bottom:1px solid #EDF1F0; display:grid; grid-template-columns:130px 1fr; gap:24px;">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#616B67; line-height:1.6;">IEEE WORLD<br>HAPTICS<br><span style="color:#949C98;">Conference</span></div>
+              <div>
+                <a href="#doc" style="font-size:16.5px; font-weight:600; color:#17201D; line-height:1.45;" style-hover="color:#2E6B4F;">Rendering Phantom Sensation on the Forearm via Asymmetric Vibration</a>
+                <div style="margin-top:7px; font-size:13.5px; color:#616B67;"><strong style="color:#17201D; font-weight:600;">R. Hamazaki</strong>, K. Mizoguchi, H. Kajimoto</div>
+                <div style="display:flex; gap:8px; margin-top:12px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; border:1px solid #C6D6CE; padding:4px 11px; border-radius:5px;">PDF</span><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; border:1px solid #C6D6CE; padding:4px 11px; border-radius:5px;">DOI</span><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; border:1px solid #C6D6CE; padding:4px 11px; border-radius:5px;">Video</span></div>
+              </div>
+            </div>
+            <div style="padding:24px 0; border-bottom:1px solid #EDF1F0; display:grid; grid-template-columns:130px 1fr; gap:24px;">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#616B67; line-height:1.6;">SIGGRAPH<br><span style="color:#949C98;">Poster</span></div>
+              <div>
+                <a href="#doc" style="font-size:16.5px; font-weight:600; color:#17201D; line-height:1.45;" style-hover="color:#2E6B4F;">Perceived Weight Modulation using Visual–Haptic Conflict in VR</a>
+                <div style="margin-top:7px; font-size:13.5px; color:#616B67;"><strong style="color:#17201D; font-weight:600;">R. Hamazaki</strong>, H. Kajimoto</div>
+                <div style="display:flex; gap:8px; margin-top:12px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; border:1px solid #C6D6CE; padding:4px 11px; border-radius:5px;">PDF</span><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; border:1px solid #C6D6CE; padding:4px 11px; border-radius:5px;">DOI</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:500; letter-spacing:0.08em; color:#949C98; padding:32px 0 14px; border-bottom:1px solid #DFE4E3;">2024</div>
+          <div style="display:flex; flex-direction:column;">
+            <div style="padding:24px 0; border-bottom:1px solid #EDF1F0; display:grid; grid-template-columns:130px 1fr; gap:24px;">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#616B67; line-height:1.6;">VRSJ<br>ANNUAL<br><span style="color:#949C98;">Domestic</span></div>
+              <div>
+                <a href="#doc" style="font-size:16.5px; font-weight:600; color:#17201D; line-height:1.45;" style-hover="color:#2E6B4F;">電気触覚ディスプレイによる材質感提示の基礎検討</a>
+                <div style="margin-top:7px; font-size:13.5px; color:#616B67;"><strong style="color:#17201D; font-weight:600;">濱口 蓮</strong>, 梶本 裕之</div>
+                <div style="display:flex; gap:8px; margin-top:12px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; border:1px solid #C6D6CE; padding:4px 11px; border-radius:5px;">PDF</span></div>
+              </div>
+            </div>
+            <div style="padding:24px 0; display:grid; grid-template-columns:130px 1fr; gap:24px;">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#616B67; line-height:1.6;">HAPTICS<br>SYMPOSIUM<br><span style="color:#949C98;">Poster</span></div>
+              <div>
+                <a href="#doc" style="font-size:16.5px; font-weight:600; color:#17201D; line-height:1.45;" style-hover="color:#2E6B4F;">A Wearable Approach to Directional Force Cues on the Arm</a>
+                <div style="margin-top:7px; font-size:13.5px; color:#616B67;"><strong style="color:#17201D; font-weight:600;">R. Hamazaki</strong>, K. Ushiyama, H. Kajimoto</div>
+                <div style="display:flex; gap:8px; margin-top:12px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; border:1px solid #C6D6CE; padding:4px 11px; border-radius:5px;">PDF</span><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; border:1px solid #C6D6CE; padding:4px 11px; border-radius:5px;">DOI</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:40px 48px; border-top:1px solid #DFE4E3; background:#EDF1F0; display:flex; align-items:center; justify-content:space-between;">
+          <span style="font-size:13px; color:#616B67;">© 2026 Ren Hamazaki</span>
+          <div style="display:flex; gap:20px; font-size:13px; color:#2E6B4F;"><span>Scholar</span><span>GitHub</span><span>Email</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== CV ===================== -->
+  <div style="width:100%; max-width:1000px;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#8a908c; margin-bottom:16px;">CV · /cv</div>
+    <div style="border-radius:10px; overflow:hidden; border:1px solid #DFE4E3; box-shadow:0 1px 3px rgba(23,32,29,0.05), 0 20px 50px rgba(23,32,29,0.08);">
+      <div style="background:#EDF1F0; border-bottom:1px solid #DFE4E3; height:42px; display:flex; align-items:center; padding:0 16px; gap:8px;">
+        <div style="width:11px; height:11px; border-radius:50%; background:#D3DAD8;"></div>
+        <div style="width:11px; height:11px; border-radius:50%; background:#D3DAD8;"></div>
+        <div style="width:11px; height:11px; border-radius:50%; background:#D3DAD8;"></div>
+        <div style="margin-left:14px; background:#F7F9F9; border:1px solid #DFE4E3; border-radius:6px; height:26px; flex:1; max-width:340px; display:flex; align-items:center; padding:0 12px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98;">hamazaki.github.io/cv</span></div>
+      </div>
+      <div style="background:#F7F9F9;">
+        <nav style="display:flex; align-items:center; justify-content:space-between; padding:24px 48px; border-bottom:1px solid #DFE4E3;">
+          <span style="font-weight:600; font-size:16px; letter-spacing:-0.01em;">Hamazaki</span>
+          <div style="display:flex; align-items:center; gap:24px; font-size:14px; color:#616B67;">
+            <span>Research</span><span>Publications</span><span style="color:#17201D; border-bottom:2px solid #2E6B4F; padding-bottom:4px;">CV</span><span>Contact</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; border-left:1px solid #DFE4E3; padding-left:18px;">EN / 日本語</span>
+          </div>
+        </nav>
+
+        <div style="padding:72px 48px 40px; display:flex; align-items:flex-end; justify-content:space-between; gap:24px;">
+          <div>
+            <h1 style="font-size:36px; font-weight:600; letter-spacing:-0.02em;">Curriculum Vitae</h1>
+            <p style="margin-top:12px; font-size:15px; color:#616B67;">Ren Hamazaki · PhD Student, Kajimoto Lab, UEC</p>
+          </div>
+          <span style="background:#2E6B4F; color:#fff; font-size:13.5px; font-weight:500; padding:11px 20px; border-radius:6px; white-space:nowrap;">Download PDF</span>
+        </div>
+
+        <div style="padding:20px 48px 56px; display:grid; grid-template-columns:180px 1fr; gap:44px 48px;">
+
+          <!-- Research Interests -->
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#2E6B4F; padding-top:4px;">Research Interests</div>
+          <p style="font-size:15px; line-height:1.8; color:#333c38; max-width:560px;">Haptic interfaces for immersive interaction — pseudo-haptics, electro-tactile display, and wearable force feedback. Bridging perceptual science and hardware prototyping.</p>
+          <div style="grid-column:1 / -1; border-top:1px solid #EDF1F0;"></div>
+
+          <!-- Keywords -->
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#2E6B4F; padding-top:4px;">Keywords</div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <span style="font-size:13px; color:#616B67; background:#FFFFFF; border:1px solid #DFE4E3; padding:6px 14px; border-radius:20px;">Haptics</span>
+            <span style="font-size:13px; color:#616B67; background:#FFFFFF; border:1px solid #DFE4E3; padding:6px 14px; border-radius:20px;">Pseudo-Haptics</span>
+            <span style="font-size:13px; color:#616B67; background:#FFFFFF; border:1px solid #DFE4E3; padding:6px 14px; border-radius:20px;">Electro-Tactile Display</span>
+            <span style="font-size:13px; color:#616B67; background:#FFFFFF; border:1px solid #DFE4E3; padding:6px 14px; border-radius:20px;">Virtual Reality</span>
+            <span style="font-size:13px; color:#616B67; background:#FFFFFF; border:1px solid #DFE4E3; padding:6px 14px; border-radius:20px;">Wearable Devices</span>
+          </div>
+          <div style="grid-column:1 / -1; border-top:1px solid #EDF1F0;"></div>
+
+          <!-- Education -->
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#2E6B4F; padding-top:4px;">Education</div>
+          <div style="display:flex; flex-direction:column; gap:22px;">
+            <div style="display:flex; gap:20px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#949C98; width:96px; flex-shrink:0;">2024 –</span><div><h3 style="font-size:16.5px;">PhD, Information Science</h3><p style="margin-top:4px; font-size:13.5px; color:#616B67;">The University of Electro-Communications</p></div></div>
+            <div style="display:flex; gap:20px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#949C98; width:96px; flex-shrink:0;">2022–24</span><div><h3 style="font-size:16.5px;">MEng, Mechanical &amp; Intelligent Systems</h3><p style="margin-top:4px; font-size:13.5px; color:#616B67;">The University of Electro-Communications</p></div></div>
+          </div>
+          <div style="grid-column:1 / -1; border-top:1px solid #EDF1F0;"></div>
+
+          <!-- Academic Appointments -->
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#2E6B4F; padding-top:4px;">Academic Appointments</div>
+          <div style="display:flex; flex-direction:column; gap:22px;">
+            <div style="display:flex; gap:20px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#949C98; width:96px; flex-shrink:0;">2025 –</span><div><h3 style="font-size:16.5px;">Research Assistant</h3><p style="margin-top:4px; font-size:13.5px; color:#616B67;">Kajimoto Lab, UEC</p></div></div>
+            <div style="display:flex; gap:20px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#949C98; width:96px; flex-shrink:0;">2023 –</span><div><h3 style="font-size:16.5px;">Teaching Assistant</h3><p style="margin-top:4px; font-size:13.5px; color:#616B67;">Interaction &amp; embedded systems course.</p></div></div>
+          </div>
+          <div style="grid-column:1 / -1; border-top:1px solid #EDF1F0;"></div>
+
+          <!-- Publications -->
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#2E6B4F; padding-top:4px;">Publications</div>
+          <div style="display:flex; flex-direction:column; gap:20px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98;">2025</div>
+            <div style="display:flex; gap:16px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#949C98; width:24px; flex-shrink:0;">C1</span><p style="font-size:14px; line-height:1.65; color:#333c38;"><strong style="color:#17201D;">R. Hamazaki</strong>, K. Mizoguchi, H. Kajimoto. “Rendering Phantom Sensation on the Forearm via Asymmetric Vibration.” <em>IEEE World Haptics</em>, 2025.</p></div>
+            <div style="display:flex; gap:16px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#949C98; width:24px; flex-shrink:0;">C2</span><p style="font-size:14px; line-height:1.65; color:#333c38;"><strong style="color:#17201D;">R. Hamazaki</strong>, H. Kajimoto. “Perceived Weight Modulation using Visual–Haptic Conflict in VR.” <em>SIGGRAPH Posters</em>, 2025.</p></div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; margin-top:4px;">Full list on the Publications page ↗</div>
+          </div>
+          <div style="grid-column:1 / -1; border-top:1px solid #EDF1F0;"></div>
+
+          <!-- Academic Service -->
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#2E6B4F; padding-top:4px;">Academic Service</div>
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="display:flex; gap:20px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#949C98; width:96px; flex-shrink:0;">2025</span><p style="font-size:14.5px; color:#333c38; line-height:1.6;">Reviewer — IEEE World Haptics Conference</p></div>
+            <div style="display:flex; gap:20px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#949C98; width:96px; flex-shrink:0;">2024</span><p style="font-size:14.5px; color:#333c38; line-height:1.6;">Student Volunteer — SIGGRAPH Asia</p></div>
+          </div>
+          <div style="grid-column:1 / -1; border-top:1px solid #EDF1F0;"></div>
+
+          <!-- Honors and Awards -->
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#2E6B4F; padding-top:4px;">Honors and Awards</div>
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="display:flex; gap:20px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#949C98; width:96px; flex-shrink:0;">2025</span><p style="font-size:14.5px; color:#333c38; line-height:1.6;">Best Presentation Award, SICE SI Division</p></div>
+            <div style="display:flex; gap:20px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#949C98; width:96px; flex-shrink:0;">2024</span><p style="font-size:14.5px; color:#333c38; line-height:1.6;">Student Travel Grant, IEEE Haptics</p></div>
+          </div>
+          <div style="grid-column:1 / -1; border-top:1px solid #EDF1F0;"></div>
+
+          <!-- Skills -->
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#2E6B4F; padding-top:4px;">Skills</div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <span style="font-size:13px; color:#616B67; background:#FFFFFF; border:1px solid #DFE4E3; padding:6px 14px; border-radius:20px;">C / C++</span>
+            <span style="font-size:13px; color:#616B67; background:#FFFFFF; border:1px solid #DFE4E3; padding:6px 14px; border-radius:20px;">Python</span>
+            <span style="font-size:13px; color:#616B67; background:#FFFFFF; border:1px solid #DFE4E3; padding:6px 14px; border-radius:20px;">Unity / C#</span>
+            <span style="font-size:13px; color:#616B67; background:#FFFFFF; border:1px solid #DFE4E3; padding:6px 14px; border-radius:20px;">PCB design</span>
+            <span style="font-size:13px; color:#616B67; background:#FFFFFF; border:1px solid #DFE4E3; padding:6px 14px; border-radius:20px;">Psychophysics</span>
+          </div>
+          <div style="grid-column:1 / -1; border-top:1px solid #EDF1F0;"></div>
+
+          <!-- Exhibitions -->
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#2E6B4F; padding-top:4px;">Exhibitions</div>
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="display:flex; gap:20px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#949C98; width:96px; flex-shrink:0;">2025</span><p style="font-size:14.5px; color:#333c38; line-height:1.6;">Innovation Japan — University Expo, Tokyo</p></div>
+            <div style="display:flex; gap:20px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#949C98; width:96px; flex-shrink:0;">2024</span><p style="font-size:14.5px; color:#333c38; line-height:1.6;">Interactive demo, IEEE Haptics Symposium</p></div>
+          </div>
+        </div>
+        <div style="padding:40px 48px; border-top:1px solid #DFE4E3; background:#EDF1F0; display:flex; align-items:center; justify-content:space-between;">
+          <span style="font-size:13px; color:#616B67;">© 2026 Ren Hamazaki</span>
+          <div style="display:flex; gap:20px; font-size:13px; color:#2E6B4F;"><span>Scholar</span><span>GitHub</span><span>Email</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== CONTACT ===================== -->
+  <div style="width:100%; max-width:1000px;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#8a908c; margin-bottom:16px;">Contact · /contact</div>
+    <div style="border-radius:10px; overflow:hidden; border:1px solid #DFE4E3; box-shadow:0 1px 3px rgba(23,32,29,0.05), 0 20px 50px rgba(23,32,29,0.08);">
+      <div style="background:#EDF1F0; border-bottom:1px solid #DFE4E3; height:42px; display:flex; align-items:center; padding:0 16px; gap:8px;">
+        <div style="width:11px; height:11px; border-radius:50%; background:#D3DAD8;"></div>
+        <div style="width:11px; height:11px; border-radius:50%; background:#D3DAD8;"></div>
+        <div style="width:11px; height:11px; border-radius:50%; background:#D3DAD8;"></div>
+        <div style="margin-left:14px; background:#F7F9F9; border:1px solid #DFE4E3; border-radius:6px; height:26px; flex:1; max-width:340px; display:flex; align-items:center; padding:0 12px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98;">hamazaki.github.io/contact</span></div>
+      </div>
+      <div style="background:#F7F9F9;">
+        <nav style="display:flex; align-items:center; justify-content:space-between; padding:24px 48px; border-bottom:1px solid #DFE4E3;">
+          <span style="font-weight:600; font-size:16px; letter-spacing:-0.01em;">Hamazaki</span>
+          <div style="display:flex; align-items:center; gap:24px; font-size:14px; color:#616B67;">
+            <span>Research</span><span>Publications</span><span>CV</span><span style="color:#17201D; border-bottom:2px solid #2E6B4F; padding-bottom:4px;">Contact</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#949C98; border-left:1px solid #DFE4E3; padding-left:18px;">EN / 日本語</span>
+          </div>
+        </nav>
+
+        <div style="padding:80px 48px; display:grid; grid-template-columns:1fr 1fr; gap:64px;">
+          <div>
+            <h1 style="font-size:36px; font-weight:600; letter-spacing:-0.02em;">Get in touch</h1>
+            <p style="margin-top:16px; font-size:16px; line-height:1.8; color:#333c38; max-width:400px;">共同研究・デモ・登壇のご相談など、お気軽にご連絡ください。Feel free to reach out about collaborations or talks.</p>
+            <div style="margin-top:36px; display:flex; flex-direction:column; gap:18px;">
+              <div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#949C98; margin-bottom:5px;">Email</div><a href="#doc" style="font-size:15.5px; color:#2E6B4F;">hamazaki [at] kaji-lab.jp</a></div>
+              <div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#949C98; margin-bottom:5px;">Affiliation</div><p style="font-size:14.5px; color:#333c38; line-height:1.6;">Kajimoto Lab, The University of<br>Electro-Communications, Tokyo</p></div>
+              <div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#949C98; margin-bottom:8px;">Elsewhere</div><div style="display:flex; gap:16px; font-size:14.5px; color:#2E6B4F;"><span>Google Scholar</span><span>GitHub</span><span>X</span></div></div>
+            </div>
+          </div>
+          <div style="background:#FFFFFF; border:1px solid #DFE4E3; border-radius:8px; padding:32px;">
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div><div style="font-size:12.5px; font-weight:500; color:#616B67; margin-bottom:7px;">Name</div><div style="background:#F7F9F9; border:1px solid #DFE4E3; border-radius:6px; padding:11px 14px; font-size:13.5px; color:#949C98;">Your name</div></div>
+              <div><div style="font-size:12.5px; font-weight:500; color:#616B67; margin-bottom:7px;">Email</div><div style="background:#F7F9F9; border:1px solid #DFE4E3; border-radius:6px; padding:11px 14px; font-size:13.5px; color:#949C98;">you@example.com</div></div>
+              <div><div style="font-size:12.5px; font-weight:500; color:#616B67; margin-bottom:7px;">Message</div><div style="background:#F7F9F9; border:1px solid #DFE4E3; border-radius:6px; padding:11px 14px; font-size:13.5px; color:#949C98; height:96px;">…</div></div>
+              <span style="background:#2E6B4F; color:#fff; font-size:14px; font-weight:500; padding:12px; border-radius:6px; text-align:center;">Send message</span>
+            </div>
+          </div>
+        </div>
+        <div style="padding:40px 48px; border-top:1px solid #DFE4E3; background:#EDF1F0; display:flex; align-items:center; justify-content:space-between;">
+          <span style="font-size:13px; color:#616B67;">© 2026 Ren Hamazaki</span>
+          <div style="display:flex; gap:20px; font-size:13px; color:#2E6B4F;"><span>Scholar</span><span>GitHub</span><span>Email</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== MOBILE RULES ===================== -->
+  <div style="width:100%; max-width:1000px;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#8a908c; margin-bottom:16px;">Mobile · ≤ 640px</div>
+    <div style="display:flex; gap:48px; align-items:flex-start; flex-wrap:wrap;">
+      <!-- phone -->
+      <div style="width:340px; flex-shrink:0; border:8px solid #17201D; border-radius:38px; overflow:hidden; box-shadow:0 20px 50px rgba(23,32,29,0.14);">
+        <div style="background:#F7F9F9;">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:18px 20px; border-bottom:1px solid #DFE4E3;">
+            <span style="font-weight:600; font-size:15px; letter-spacing:-0.01em;">Hamazaki</span>
+            <div style="display:flex; flex-direction:column; gap:4px;"><div style="width:20px; height:2px; background:#17201D;"></div><div style="width:20px; height:2px; background:#17201D;"></div><div style="width:20px; height:2px; background:#17201D;"></div></div>
+          </div>
+          <div style="padding:32px 20px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#2E6B4F; margin-bottom:14px;">Haptics · VR · HCI</div>
+            <h1 style="font-size:30px; font-weight:600; letter-spacing:-0.02em; line-height:1.1;">Ren Hamazaki</h1>
+            <p style="margin-top:8px; font-size:14px; color:#616B67;">PhD Student, Kajimoto Lab</p>
+            <p style="margin-top:18px; font-size:14.5px; line-height:1.75; color:#333c38;">I design haptic interfaces that let people feel virtual forces and textures.</p>
+            <div style="margin-top:22px; background:#2E6B4F; color:#fff; font-size:14px; font-weight:500; padding:12px; border-radius:6px; text-align:center;">View research</div>
+          </div>
+          <div style="padding:28px 20px; border-top:1px solid #DFE4E3;">
+            <h2 style="font-size:18px; margin-bottom:12px;">About</h2>
+            <p style="font-size:14.5px; line-height:1.75; color:#333c38;">触覚提示と知覚の関係に関心があり、心理物理実験とウェアラブルデバイスの試作を往復しながら研究を進めています。</p>
+            <div style="margin-top:18px; display:flex; flex-direction:column; gap:12px;">
+              <div style="display:flex; gap:14px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; flex-shrink:0; width:52px;">2024 –</span><span style="font-size:13.5px; line-height:1.55; color:#333c38;">PhD, UEC — Kajimoto Lab</span></div>
+              <div style="display:flex; gap:14px; border-top:1px solid #EDF1F0; padding-top:12px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; flex-shrink:0; width:52px;">2022</span><span style="font-size:13.5px; line-height:1.55; color:#333c38;">MEng, UEC</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- rules -->
+      <div style="flex:1; min-width:320px; background:#FFFFFF; border:1px solid #DFE4E3; border-radius:8px; padding:40px; box-shadow:0 1px 3px rgba(23,32,29,0.05), 0 16px 40px rgba(23,32,29,0.06);">
+        <h2 style="font-size:22px; letter-spacing:-0.01em;">Mobile rules</h2>
+        <div style="margin-top:24px; display:flex; flex-direction:column; gap:18px;">
+          <div style="display:flex; gap:16px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; flex-shrink:0; width:88px;">Breakpoint</span><p style="font-size:14px; line-height:1.6; color:#333c38;">≤ 640px で1カラム。768–1024 は中間で余白を詰める。</p></div>
+          <div style="display:flex; gap:16px; border-top:1px solid #EDF1F0; padding-top:18px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; flex-shrink:0; width:88px;">Nav</span><p style="font-size:14px; line-height:1.6; color:#333c38;">横並びリンクはハンバーガーに集約。言語切替はメニュー内へ。</p></div>
+          <div style="display:flex; gap:16px; border-top:1px solid #EDF1F0; padding-top:18px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; flex-shrink:0; width:88px;">Grid</span><p style="font-size:14px; line-height:1.6; color:#333c38;">カード・テーマ・プロジェクトは縦積み1カラム。図は全幅。</p></div>
+          <div style="display:flex; gap:16px; border-top:1px solid #EDF1F0; padding-top:18px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; flex-shrink:0; width:88px;">Padding</span><p style="font-size:14px; line-height:1.6; color:#333c38;">画面左右 20px、セクション間 28–40px に縮小。</p></div>
+          <div style="display:flex; gap:16px; border-top:1px solid #EDF1F0; padding-top:18px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; flex-shrink:0; width:88px;">Type</span><p style="font-size:14px; line-height:1.6; color:#333c38;">Display 46→30、H1 30→24。本文は 15–16px を維持。</p></div>
+          <div style="display:flex; gap:16px; border-top:1px solid #EDF1F0; padding-top:18px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; flex-shrink:0; width:88px;">Tap target</span><p style="font-size:14px; line-height:1.6; color:#333c38;">リンク・ボタンは最小 44px。Publications の PDF/DOI も余白確保。</p></div>
+          <div style="display:flex; gap:16px; border-top:1px solid #EDF1F0; padding-top:18px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#2E6B4F; flex-shrink:0; width:88px;">Pub list</span><p style="font-size:14px; line-height:1.6; color:#333c38;">venue 列を上に回し、タイトル→著者→リンクの縦並びに。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+</x-dc>
+</body>
+</html>

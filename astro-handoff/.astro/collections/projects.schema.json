@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "anyOf": [
+    {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "default": "research",
+            "type": "string",
+            "enum": [
+              "research",
+              "personal"
+            ]
+          },
+          "year": {
+            "type": "number"
+          },
+          "tag": {
+            "type": "string"
+          },
+          "title": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string"
+              },
+              "ja": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "en"
+            ]
+          },
+          "description": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string"
+              },
+              "ja": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "en"
+            ]
+          },
+          "award": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string"
+                  },
+                  "ja": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "en"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "image": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "year",
+          "tag",
+          "title",
+          "description"
+        ]
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "default": "research",
+            "type": "string",
+            "enum": [
+              "research",
+              "personal"
+            ]
+          },
+          "year": {
+            "type": "number"
+          },
+          "tag": {
+            "type": "string"
+          },
+          "title": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string"
+              },
+              "ja": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "en"
+            ]
+          },
+          "description": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string"
+              },
+              "ja": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "en"
+            ]
+          },
+          "award": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string"
+                  },
+                  "ja": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "en"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "image": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "year",
+          "tag",
+          "title",
+          "description"
+        ]
+      }
+    }
+  ]
+}
