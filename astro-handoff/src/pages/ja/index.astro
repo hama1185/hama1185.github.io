@@ -1,17 +1,17 @@
 ---
 // src/pages/index.astro — Home
-import Base from '../layouts/Base.astro';
-import Button from '../components/Button.astro';
-import ThemeCard from '../components/ThemeCard.astro';
-import Placeholder from '../components/Placeholder.astro';
-import PublicationList from '../components/PublicationList.astro';
-import profile from '../data/profile.json';
-import themes from '../data/themes.json';
-import news from '../data/news.json';
-import { ui } from '../lib/site';
-import { t, withBase, type Lang } from '../lib/i18n';
+import Base from '../../layouts/Base.astro';
+import Button from '../../components/Button.astro';
+import ThemeCard from '../../components/ThemeCard.astro';
+import Placeholder from '../../components/Placeholder.astro';
+import PublicationList from '../../components/PublicationList.astro';
+import profile from '../../data/profile.json';
+import themes from '../../data/themes.json';
+import news from '../../data/news.json';
+import { ui } from '../../lib/site';
+import { t, withBase, type Lang } from '../../lib/i18n';
 
-const lang: Lang = 'en';
+const lang: Lang = 'ja';
 ---
 <Base title={`${t(profile.name, lang)} — Haptics researcher`} active="home" lang={lang} width="wide">
 
@@ -22,7 +22,7 @@ const lang: Lang = 'en';
       <p class="role">{t(profile.role, lang)}</p>
       <p class="bio">{t(profile.bio, lang)}</p>
       <div class="actions">
-        <Button href={withBase('/research')}>{t(ui.viewResearch, lang)}</Button>
+        <Button href={withBase('/ja/research')}>{t(ui.viewResearch, lang)}</Button>
         {profile.links.scholar && <a class="ext" href={profile.links.scholar}>Google Scholar ↗</a>}
       </div>
     </div>
@@ -40,7 +40,7 @@ const lang: Lang = 'en';
         {profile.timeline.map((row) => (
           <li><span class="yr">{row.year}</span><span>{t(row.label, lang)}</span></li>
         ))}
-        <li class="more"><a href={withBase('/cv')}>{t(ui.fullCv, lang)} ↗</a></li>
+        <li class="more"><a href={withBase('/ja/cv')}>{t(ui.fullCv, lang)} ↗</a></li>
       </ul>
     </div>
   </section>

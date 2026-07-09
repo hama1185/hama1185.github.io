@@ -1,22 +1,28 @@
 ---
 // src/components/PublicationList.astro
-// Full list grouped by year with a client-side venue-type filter.
-// Props: limit (recent N, compact, no filter/years) | showFilter.
+// Full list grouped by category (journal / conference / domestic), each
+// sorted by year descending. Props: limit (recent N, compact) | showFilter.
 import PublicationItem from './PublicationItem.astro';
 import pubsData from '../data/publications.json';
 import { type Lang } from '../lib/i18n';
 
 interface Props { limit?: number; showFilter?: boolean; lang?: Lang; }
-const { limit, showFilter = false, lang = 'en' } = Astro.props;
+const { limit, lang = 'en' } = Astro.props;
 
 const pubs = [...pubsData].sort((a, b) => b.year - a.year);
 
 // Recent (Home): flat compact list
 const recent = limit ? pubs.slice(0, limit) : null;
 
-// Full: group by year (descending)
-const years = [...new Set(pubs.map((p) => p.year))].sort((a, b) => b - a);
-const types = ['all', ...new Set(pubs.map((p) => p.venue.type))];
+// Full: fixed category sections, in display order. Each already year-sorted.
+const categories = [
+  { type: 'journal',    label: 'Journal Articles' },
+  { type: 'conference', label: 'International Conferences' },
+  { type: 'domestic',   label: 'Domestic Conferences' },
+];
+const groups = categories
+  .map((c) => ({ ...c, items: pubs.filter((p) => p.venue.type === c.type) }))
+  .filter((g) => g.items.length > 0);
 ---
 {recent ? (
   <div class="recent">
@@ -24,19 +30,10 @@ const types = ['all', ...new Set(pubs.map((p) => p.venue.type))];
   </div>
 ) : (
   <div class="full">
-    {showFilter && (
-      <div class="filters" role="tablist">
-        {types.map((tp, i) => (
-          <button class:list={['chip', { active: i === 0 }]} data-filter={tp}>
-            {tp === 'all' ? 'All' : tp[0].toUpperCase() + tp.slice(1)}
-          </button>
-        ))}
-      </div>
-    )}
-    {years.map((y) => (
-      <section class="year-group" data-year={y}>
-        <h2 class="year">{y}</h2>
-        {pubs.filter((p) => p.year === y).map((p) => <PublicationItem {...p} variant="full" lang={lang} />)}
+    {groups.map((g) => (
+      <section class="cat-group" data-type={g.type}>
+        <h2 class="cat">{g.label}</h2>
+        {g.items.map((p) => <PublicationItem {...p} variant="full" lang={lang} />)}
       </section>
     ))}
   </div>
@@ -44,28 +41,6 @@ const types = ['all', ...new Set(pubs.map((p) => p.venue.type))];
 
 <style>
   .recent { display: flex; flex-direction: column; gap: 22px; }
-  .filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
-  .chip { font: inherit; font-size: 13px; color: var(--color-muted-text); background: var(--color-surface); border: 1px solid var(--color-border); padding: 7px 15px; border-radius: 20px; cursor: pointer; min-height: 34px; }
-  .chip.active { color: #fff; background: var(--color-primary); border-color: var(--color-primary); }
-  .year { font-family: var(--font-mono); font-size: 13px; font-weight: 500; letter-spacing: 0.08em; color: var(--color-faint-text); padding-bottom: 14px; border-bottom: 1px solid var(--color-border); margin: 32px 0 0; }
-  .year-group:first-of-type .year { margin-top: 0; }
+  .cat { font-family: var(--font-mono); font-size: 13px; font-weight: 500; letter-spacing: 0.08em; color: var(--color-faint-text); padding-bottom: 14px; border-bottom: 1px solid var(--color-border); margin: 48px 0 0; }
+  .cat-group:first-of-type .cat { margin-top: 0; }
 </style>
-
-<script>
-  // Progressive enhancement: filter by venue type. Works without JS (shows all).
-  const root = document.currentScript?.previousElementSibling?.previousElementSibling;
-  document.querySelectorAll('.filters .chip').forEach((chip) => {
-    chip.addEventListener('click', () => {
-      const f = chip.getAttribute('data-filter');
-      document.querySelectorAll('.filters .chip').forEach((c) => c.classList.toggle('active', c === chip));
-      document.querySelectorAll('.full .pub').forEach((el) => {
-        (el as HTMLElement).style.display = (f === 'all' || el.getAttribute('data-type') === f) ? '' : 'none';
-      });
-      // hide empty year groups
-      document.querySelectorAll('.year-group').forEach((g) => {
-        const anyVisible = [...g.querySelectorAll('.pub')].some((el) => (el as HTMLElement).style.display !== 'none');
-        (g as HTMLElement).style.display = anyVisible ? '' : 'none';
-      });
-    });
-  });
-</script>

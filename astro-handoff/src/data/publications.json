@@ -1,43 +1,201 @@
 [
   {
-    "id": "whc2025-phantom",
-    "year": 2025,
-    "venue": { "short": "IEEE World Haptics", "type": "conference" },
-    "title": { "en": "Rendering Phantom Sensation on the Forearm via Asymmetric Vibration" },
-    "authors": ["R. Hamazaki", "K. Mizoguchi", "H. Kajimoto"],
-    "self": "R. Hamazaki",
-    "links": { "pdf": "", "doi": "", "video": "" },
-    "award": ""
+    "id": "frontiers2026-actenv",
+    "year": 2026,
+    "venue": { "short": "Front. Virtual Reality", "type": "journal" },
+    "title": { "en": "Act-Env matching: activity and context-aware avatar positioning for telepresence in heterogeneous environments" },
+    "authors": ["H. Deguchi", "S. Taguchi", "T. Hamazaki", "K. Takeyama", "H. Sakai", "K. Shimura", "T. Yonezawa", "N. Kawaguchi"],
+    "self": "T. Hamazaki",
+    "links": { "doi": "https://doi.org/10.3389/frvir.2026.1791810" },
+    "award": null
   },
   {
-    "id": "siggraph2025-weight",
-    "year": 2025,
-    "venue": { "short": "SIGGRAPH", "type": "poster" },
-    "title": { "en": "Perceived Weight Modulation using Visual–Haptic Conflict in VR" },
-    "authors": ["R. Hamazaki", "H. Kajimoto"],
-    "self": "R. Hamazaki",
-    "links": { "pdf": "", "doi": "" },
-    "award": ""
+    "id": "frontiers2026-spatialprompting",
+    "year": 2026,
+    "venue": { "short": "Front. Robotics AI", "type": "journal" },
+    "title": { "en": "SpatialPrompting: Pose-Aware Keyframe Prompting for 3D Spatial QA toward Smart Indoor Environments" },
+    "authors": ["S. Taguchi", "H. Deguchi", "T. Hamazaki", "H. Sakai"],
+    "self": "T. Hamazaki",
+    "links": {},
+    "award": null
   },
   {
-    "id": "vrsj2024-material",
+    "id": "iscience2025-passivetouch",
+    "year": 2025,
+    "venue": { "short": "iScience", "type": "journal" },
+    "title": { "en": "Passive human touch cannot recognize the shape of a pattern imprinted on the fingertip" },
+    "authors": ["S. Kuroki", "T. Hamazaki", "H. Kajimoto", "S. Nishida"],
+    "self": "T. Hamazaki",
+    "links": { "doi": "https://doi.org/10.1016/j.isci.2025.112331" },
+    "award": null
+  },
+  {
+    "id": "ieeeaccess2024-tgi",
     "year": 2024,
+    "venue": { "short": "IEEE Access", "type": "journal" },
+    "title": { "en": "Chemical Approach to the Thermal Grill Illusion" },
+    "authors": ["T. Hamazaki", "M. Kaneda", "S. Kaneko", "H. Kajimoto"],
+    "self": "T. Hamazaki",
+    "links": { "doi": "https://doi.org/10.1109/ACCESS.2024.3368894" },
+    "award": null
+  },
+  {
+    "id": "ieeeaccess2023-anesthetic",
+    "year": 2023,
+    "venue": { "short": "IEEE Access", "type": "journal" },
+    "title": { "en": "Suppressing Discomfort Caused by Electrical Stimulation Using a Local Anesthetic Cream" },
+    "authors": ["T. Hamazaki", "T. Saito", "S. Kaneko", "H. Kajimoto"],
+    "self": "T. Hamazaki",
+    "links": { "doi": "https://doi.org/10.1109/ACCESS.2023.3241605" },
+    "award": null
+  },
+
+  {
+    "id": "siggraphasia2025-enchantedtouch",
+    "year": 2025,
+    "venue": { "short": "SIGGRAPH Asia E-Tech", "type": "conference" },
+    "title": { "en": "Enchanted Touch: Delivering Vibrotactile and Thermal Feedback Without Fingerpad Contact" },
+    "authors": ["T. Hamazaki", "T. Maeda", "H. Deguchi", "S. Taguchi", "H. Sakai"],
+    "self": "T. Hamazaki",
+    "links": { "doi": "https://doi.org/10.1145/3757373.3763767" },
+    "award": { "en": "Emerging Technologies Honorable Mention Award" }
+  },
+  {
+    "id": "chi2024-alcool",
+    "year": 2024,
+    "venue": { "short": "ACM CHI", "type": "conference" },
+    "title": { "en": "ALCool: Utilizing Alcohol's Evaporative Cooling for Ubiquitous Cold Sensation Feedback" },
+    "authors": ["T. Hamazaki", "T. Takami", "K. Ushiyama", "I. Mizoguchi", "H. Kajimoto"],
+    "self": "T. Hamazaki",
+    "links": { "doi": "https://doi.org/10.1145/3613904.3642113" },
+    "award": null
+  },
+  {
+    "id": "ahs2023-coldness",
+    "year": 2023,
+    "venue": { "short": "Augmented Humans", "type": "conference" },
+    "title": { "en": "Coldness Presentation to Ventral Forearm using Electrical Stimulation with Elastic Gel and Anesthetic Cream" },
+    "authors": ["T. Saito", "T. Hamazaki", "S. Kaneko", "H. Kajimoto"],
+    "self": "T. Hamazaki",
+    "links": { "doi": "https://doi.org/10.1145/3582700.3582713" },
+    "award": null
+  },
+  {
+    "id": "haptics2022-tgi",
+    "year": 2022,
+    "venue": { "short": "IEEE Haptics Symposium", "type": "conference" },
+    "title": { "en": "Chemical-induced Thermal Grill Illusion" },
+    "authors": ["T. Hamazaki", "M. Kaneda", "J. Zhang", "S. Kaneko", "H. Kajimoto"],
+    "self": "T. Hamazaki",
+    "links": { "doi": "https://doi.org/10.1109/HAPTICS52432.2022.9765569" },
+    "award": { "en": "Best Conference Technical Paper — Honorable Mention" }
+  },
+  {
+    "id": "eurohaptics2022-dynamicrange",
+    "year": 2022,
+    "venue": { "short": "EuroHaptics", "type": "conference" },
+    "title": { "en": "Expanding Dynamic Range of Electrical Stimulation Using Anesthetic Cream" },
+    "authors": ["T. Hamazaki", "T. Saito", "S. Kaneko", "H. Kajimoto"],
+    "self": "T. Hamazaki",
+    "links": { "doi": "https://doi.org/10.1007/978-3-031-06249-0_21" },
+    "award": null
+  },
+  {
+    "id": "asiahaptics2022-popping",
+    "year": 2022,
+    "venue": { "short": "AsiaHaptics", "type": "conference" },
+    "title": { "en": "Mixing Glue Spray and Cold Spray for Realizing \"Popping\" Sensation" },
+    "authors": ["T. Hamazaki", "S. Kaneko", "M. Miyakami", "H. Kajimoto"],
+    "self": "T. Hamazaki",
+    "links": {},
+    "award": null
+  },
+  {
+    "id": "ahs2022-stressmincer",
+    "year": 2022,
+    "venue": { "short": "Augmented Humans", "type": "conference" },
+    "title": { "en": "StressMincer: Enhancement of Catharsis Effect by Visualization of Words and Destruction with Haptic Feedback" },
+    "authors": ["T. Takami", "S. Ando", "S. Nakayama", "A. Saito", "Y. Suga", "T. Hamazaki", "Y. Yano", "H. Kajimoto"],
+    "self": "T. Hamazaki",
+    "links": { "doi": "https://doi.org/10.1145/3519391.3524030" },
+    "award": { "en": "Best Demo Award" }
+  },
+
+  {
+    "id": "si2023-alcohol",
+    "year": 2023,
+    "venue": { "short": "SICE SI", "type": "domestic" },
+    "title": {
+      "en": "Ubiquitous Cold Sensation Presentation Using Alcohol Evaporation",
+      "ja": "アルコールの揮発を利用したユビキタスな冷感提示"
+    },
+    "authors": ["浜崎 拓海", "高見 太基", "牛山 奎悟", "溝口 泉", "梶本 裕之"],
+    "self": "浜崎 拓海",
+    "links": { "pdf": "https://kaji-lab.jp/ja/index.php?plugin=attach&pcmd=open&file=hamazaki_si23.pdf&refer=hamazaki" },
+    "award": { "ja": "優秀講演賞", "en": "Best Presentation Award" }
+  },
+  {
+    "id": "si2023-baghaptic",
+    "year": 2023,
+    "venue": { "short": "SICE SI", "type": "domestic" },
+    "title": {
+      "en": "Development of Bag-installed Haptic Device to Deliver Vibration and Pressure Feedback in Everyday Life"
+    },
+    "authors": ["牛山 奎悟", "浜崎 拓海", "梶本 裕之"],
+    "self": "浜崎 拓海",
+    "links": {},
+    "award": { "ja": "優秀講演賞", "en": "Best Presentation Award" }
+  },
+  {
+    "id": "robomech2023-tgi-arrangement2",
+    "year": 2023,
+    "venue": { "short": "ROBOMECH", "type": "domestic" },
+    "title": {
+      "en": "Examination of Stimulus Arrangement in the Chemical Thermal Grill Illusion (Second Report)",
+      "ja": "化学物質を用いたサーマルグリル錯覚における刺激配置の検討 第二報"
+    },
+    "authors": ["浜崎 拓海", "金田 実久", "金子 征太郎", "梶本 裕之"],
+    "self": "浜崎 拓海",
+    "links": {},
+    "award": null
+  },
+  {
+    "id": "vrsj2022-tgi-arrangement",
+    "year": 2022,
     "venue": { "short": "VRSJ Annual", "type": "domestic" },
-    "title": { "en": "Basic study of material texture presentation using an electro-tactile display",
-               "ja": "電気触覚ディスプレイによる材質感提示の基礎検討" },
-    "authors": ["濱口 蓮", "梶本 裕之"],
-    "self": "濱口 蓮",
-    "links": { "pdf": "" },
-    "award": ""
+    "title": {
+      "en": "Examination of Stimulus Arrangement in the Chemical Thermal Grill Illusion",
+      "ja": "化学物質を用いたサーマルグリル錯覚における刺激配置の検討"
+    },
+    "authors": ["浜崎 拓海", "金田 実久", "金子 征太郎", "梶本 裕之"],
+    "self": "浜崎 拓海",
+    "links": { "pdf": "https://kaji-lab.jp/ja/index.php?plugin=attach&pcmd=open&file=2B2-3.pdf&refer=hamazaki" },
+    "award": { "ja": "学術奨励賞", "en": "Encouragement Award" }
   },
   {
-    "id": "haptics2024-directional",
-    "year": 2024,
-    "venue": { "short": "Haptics Symposium", "type": "poster" },
-    "title": { "en": "A Wearable Approach to Directional Force Cues on the Arm" },
-    "authors": ["R. Hamazaki", "K. Ushiyama", "H. Kajimoto"],
-    "self": "R. Hamazaki",
-    "links": { "pdf": "", "doi": "" },
-    "award": ""
+    "id": "vrsj2022-popping",
+    "year": 2022,
+    "venue": { "short": "VRSJ Annual", "type": "domestic" },
+    "title": {
+      "en": "Comparison of Popping Sensation Presentation Using a Mixture of Glue Spray and Cold Spray",
+      "ja": "のりスプレーとコールドスプレーの混合物を用いた破裂感提示の比較"
+    },
+    "authors": ["浜崎 拓海", "宮上 昌大", "金子 征太郎", "梶本 裕之"],
+    "self": "浜崎 拓海",
+    "links": { "pdf": "https://kaji-lab.jp/ja/index.php?plugin=attach&pcmd=open&file=3B2-1.pdf&refer=hamazaki" },
+    "award": null
+  },
+  {
+    "id": "vrsj2021-tgi",
+    "year": 2021,
+    "venue": { "short": "VRSJ Annual", "type": "domestic" },
+    "title": {
+      "en": "Thermal Grill Illusion Using Chemical Substances",
+      "ja": "化学物質を用いたサーマルグリル錯覚"
+    },
+    "authors": ["浜崎 拓海", "金田 実久", "張 建堯", "金子 征太郎", "梶本 裕之"],
+    "self": "浜崎 拓海",
+    "links": { "pdf": "https://kaji-lab.jp/ja/index.php?plugin=attach&pcmd=open&file=vrsj2021_hamazaki.pdf&refer=hamazaki" },
+    "award": null
   }
 ]

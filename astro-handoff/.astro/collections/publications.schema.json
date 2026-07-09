@@ -68,7 +68,25 @@
             }
           },
           "award": {
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string"
+                  },
+                  "ja": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "en"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "required": [
@@ -153,7 +171,25 @@
             }
           },
           "award": {
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string"
+                  },
+                  "ja": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "en"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "required": [

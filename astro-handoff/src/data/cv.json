@@ -1,40 +1,67 @@
 {
   "researchInterests": {
-    "en": "Haptic interfaces for immersive interaction — pseudo-haptics, electro-tactile display, and wearable force feedback. Bridging perceptual science and hardware prototyping.",
-    "ja": "没入的インタラクションのための触覚インタフェース。擬似触覚・電気触覚ディスプレイ・ウェアラブル力覚提示。知覚科学とハードウェア試作の橋渡し。"
+    "en": "Human perception — especially tactile illusions — and the haptic interfaces and sensing built upon them. I advance research by moving between psychophysical experiments and interface design, with chemical haptics as one of my current PhD themes. I am also interested in HCI and sensing.",
+    "ja": "人間の知覚、特に触覚の錯覚に関心があり、錯覚を利用するためのインタフェース設計と心理物理実験を通して研究を進めています。HCIやセンシングにも関心があり、博士課程では chemical haptics をテーマの一つとして取り組んでいます。"
   },
-  "keywords": ["Haptics", "Pseudo-Haptics", "Electro-Tactile Display", "Virtual Reality", "Wearable Devices"],
+  "keywords": ["Haptics", "Tactile Illusion", "Chemical Haptics", "Electrical Stimulation", "Human–Computer Interaction", "Psychophysics"],
 
   "education": [
-    { "period": "2024 –",  "title": { "en": "PhD, Information Science", "ja": "博士課程（情報学専攻）" },
+    { "period": "2026 –",    "title": { "en": "Working PhD Student, Informatics", "ja": "社会人博士課程（情報学）" },
+      "org": { "en": "The University of Electro-Communications — Kajimoto Lab", "ja": "電気通信大学 梶本研究室" } },
+    { "period": "2022–2024", "title": { "en": "MEng", "ja": "修士（工学）" },
       "org": { "en": "The University of Electro-Communications", "ja": "電気通信大学" } },
-    { "period": "2022–24", "title": { "en": "MEng, Mechanical & Intelligent Systems", "ja": "修士（機械知能システム）" },
-      "org": { "en": "The University of Electro-Communications", "ja": "電気通信大学" } }
+    { "period": "2020–2022", "title": { "en": "BEng", "ja": "学士（工学）" },
+      "org": { "en": "The University of Electro-Communications", "ja": "電気通信大学" } },
+    { "period": "2015–2020",     "title": { "en": "Associate Degree", "ja": "準学士" },
+      "org": { "en": "Ichinoseki National College of Technology", "ja": "一関工業高等専門学校" } }
   ],
 
   "appointments": [
-    { "period": "2025 –", "title": { "en": "Research Assistant", "ja": "リサーチアシスタント" },
-      "org": { "en": "Kajimoto Lab, UEC", "ja": "電通大 梶本研究室" } },
-    { "period": "2023 –", "title": { "en": "Teaching Assistant", "ja": "ティーチングアシスタント" },
-      "org": { "en": "Interaction & embedded systems course.", "ja": "インタラクション・組込みシステム演習." } }
+    { "period": "2024 –", "title": { "en": "Researcher", "ja": "研究員" },
+      "org": { "en": "Toyota Central R&D Labs — Nagakute Campus (Collaborative Intelligence Research Domain)", "ja": "豊田中央研究所 長久手キャンパス（協働知性研究領域）" } },
+    { "period": "2023.02–03", "title": { "en": "Internship", "ja": "インターン" },
+      "org": { "en": "Sony R&D Center", "ja": "ソニー R&Dセンター" } },
+    { "period": "2022.08–09", "title": { "en": "Internship", "ja": "インターン" },
+      "org": { "en": "Toyota Central R&D Labs — Tokyo Campus", "ja": "豊田中央研究所 東京キャンパス" } },
+      
+    { "period": "2019.07–08", "title": { "en": "Research Assistant", "ja": "研究アルバイト" },
+      "org": { "en": "Osaka University — Human Information Engineering Lab. (Maeda Lab)", "ja": "大阪大学 Human Information Engineering Lab.(前田研究室)" } },
+    { "period": "2018.07–08", "title": { "en": "Internship", "ja": "インターン" },
+      "org": { "en": "The University of Tokyo — Information Somatics Lab. (Inami Lab)", "ja": "東京大学 Information Somatics Lab. (稲見研究室)" } }
+    
   ],
 
   "_publications": "Rendered from the publications collection (see publications.json). Do not duplicate here.",
 
   "service": [
-    { "year": 2025, "label": { "en": "Reviewer — IEEE World Haptics Conference", "ja": "査読 — IEEE World Haptics Conference" } },
-    { "year": 2024, "label": { "en": "Student Volunteer — SIGGRAPH Asia", "ja": "学生ボランティア — SIGGRAPH Asia" } }
+    { "label": { "en": "Reviewer — ACM CHI", "ja": "査読 — ACM CHI" } },
+    { "label": { "en": "Reviewer — ACM UIST", "ja": "査読 — ACM UIST" } },
+    { "label": { "en": "Reviewer — ACM SIGGRAPH Asia", "ja": "査読 — ACM SIGGRAPH Asia" } },
+    { "label": { "en": "Reviewer — IEEE World Haptics Conference", "ja": "査読 — IEEE World Haptics Conference" } }
   ],
 
   "honors": [
-    { "year": 2025, "label": { "en": "Best Presentation Award, SICE SI Division", "ja": "優秀講演賞、計測自動制御学会 SI部門" } },
-    { "year": 2024, "label": { "en": "Student Travel Grant, IEEE Haptics", "ja": "学生渡航支援、IEEE Haptics" } }
+    { "year": 2025, "scope": "international", "label": { "en": "Emerging Technologies Honorable Mention Award, SIGGRAPH Asia 2025", "ja": "Emerging Technologies Honorable Mention Award、SIGGRAPH Asia 2025" } },
+    { "year": 2022, "scope": "international", "label": { "en": "Best Conference Technical Paper Honorable Mention, IEEE Haptics Symposium 2022", "ja": "Best Conference Technical Paper Honorable Mention、IEEE Haptics Symposium 2022" } },
+    { "year": 2022, "scope": "international", "label": { "en": "Best Demo Award, Augmented Humans International Conference (StressMincer)", "ja": "ベストデモ賞、Augmented Humans International Conference（StressMincer）" } },
+
+    { "year": 2023, "scope": "domestic", "label": { "en": "Best Presentation Award, SICE System Integration Division", "ja": "優秀講演賞、計測自動制御学会 システムインテグレーション部門講演会" } },
+    { "year": "2022–24", "scope": "domestic", "label": { "en": "Student Award from the President of the University of Electro-Communications", "ja": "電気通信大学 学長賞（研究部門・課外活動部門）" } },
+    { "year": 2022, "scope": "domestic", "label": { "en": "Encouragement Award, VRSJ Annual Conference", "ja": "学術奨励賞、日本バーチャルリアリティ学会大会" } },
+    { "year": 2022, "scope": "domestic", "label": { "en": "Megurokai Award, The University of Electro-Communications", "ja": "目黒会賞、電気通信大学" } },
+    { "year": 2022, "scope": "domestic", "label": { "en": "Best Presentation Award, 15th Meeting of the Young Researcher Association for Haptics", "ja": "ベストプレゼンテーション賞、触覚若手の会 第15回集会" } },
+    { "year": 2022, "scope": "domestic", "label": { "en": "Excellence Award, Giiku-ten 2022 (StressMincer)", "ja": "優秀賞、技育展2022（StressMincer）" } },
+    { "year": 2022, "scope": "domestic", "label": { "en": "HEROES LEAGUE 2022 — Gold ×1, Silver ×2, Bronze ×1", "ja": "HEROES LEAGUE 2022 — 金賞×1・銀賞×2・銅賞×1" } },
+    { "year": 2021, "scope": "domestic", "label": { "en": "HEROES LEAGUE 2021 — Gold ×1, Silver ×3", "ja": "HEROES LEAGUE 2021 — 金賞×1・銀賞×3" } },
+    { "year": 2021, "scope": "domestic", "label": { "en": "Jury Award (Nanako Ishido Award), IVRC2021", "ja": "審査員賞（石戸奈々子賞）、IVRC2021" } }
   ],
 
-  "skills": ["C / C++", "Python", "Unity / C#", "PCB design", "Psychophysics"],
+  "skills": ["C / C++", "Python", "Unity / C#", "PCB Design", "Psychophysics", "Multimodal LLMs"],
 
   "exhibitions": [
-    { "year": 2025, "label": { "en": "Innovation Japan — University Expo, Tokyo", "ja": "イノベーション・ジャパン 大学見本市、東京" } },
-    { "year": 2024, "label": { "en": "Interactive demo, IEEE Haptics Symposium", "ja": "インタラクティブデモ、IEEE Haptics Symposium" } }
+    { "year": 2022, "label": { "en": "Gigiku-ten 2022 — Selected Work", "ja": "技育展2022 — 選出" } },
+    { "year": 2022, "label": { "en": "HEROES LEAGUE 2022 — Online League Finalist", "ja": "HEROES LEAGUE 2022 — オンラインリーグ決勝進出" } },
+    { "year": 2021, "label": { "en": "HEROES LEAGUE 2021", "ja": "HEROES LEAGUE 2021" } },
+    { "year": 2021, "label": { "en": "IVRC2021 — SEED / LEAP STAGE (2 works)", "ja": "IVRC2021 — SEED / LEAP STAGE 進出（2作品）" } }
   ]
 }

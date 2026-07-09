@@ -1,22 +1,28 @@
 {
-  "name":     { "en": "Ren Hamazaki", "ja": "濱口 蓮" },
-  "role":     { "en": "PhD Student, Kajimoto Lab — The University of Electro-Communications",
-                "ja": "博士課程、梶本研究室 — 電気通信大学" },
+  "name":     { "en": "Takumi Hamazaki", "ja": "浜崎 拓海" },
+  "role":     { "en": "Researcher, Toyota Central R&D Labs / Working PhD Student, Kajimoto Lab — The University of Electro-Communications",
+                "ja": "豊田中央研究所 研究員／社会人博士（電気通信大学 梶本研究室）" },
   "tagline":  { "en": "Haptics · VR · HCI", "ja": "触覚 · VR · HCI" },
   "bio": {
-    "en": "I design haptic interfaces that let people feel virtual forces and textures. My work spans pseudo-haptics, electro-tactile display, and wearable devices for immersive interaction.",
-    "ja": "触覚提示と知覚の関係に関心があり、心理物理実験とウェアラブルデバイスの試作を往復しながら研究を進めています。"
+    "en": "My research interests include human perception, especially tactile illusions, as well as haptic interfaces and sensing. I investigate interface design and psychophysical experiments that make use of these illusions, and one of my current PhD themes is chemical haptics.",
+    "ja": "人間の知覚、特に触覚の錯覚に関心があり、錯覚を利用するためのインタフェース設計と心理物理実験を通して研究を進めています。HCIやセンシングにも関心があり、博士課程では chemical haptics をテーマの一つとして取り組んでいます。"
   },
-  "location": { "en": "Tokyo, Japan", "ja": "東京" },
-  "email": "hamazaki [at] kaji-lab.jp",
+  "location": { "en": "Aichi / Tokyo, Japan", "ja": "愛知・東京" },
+  "email": "hamazaki [at] mosk.tytlabs.co.jp",
+  "emails": [
+    "hamazaki [at] mosk.tytlabs.co.jp",
+    "hamazaki [at] kaji-lab.jp"
+  ],
   "links": {
     "scholar": "https://scholar.google.co.jp/citations?user=T81xNa0AAAAJ",
     "github":  "",
     "x":       ""
   },
   "timeline": [
-    { "year": "2024 –", "label": { "en": "PhD, UEC — Kajimoto Lab", "ja": "博士課程、電通大 梶本研" } },
-    { "year": "2022",   "label": { "en": "MEng, UEC",              "ja": "修士（電通大）" } },
-    { "year": "2018",   "label": { "en": "BEng, UEC",              "ja": "学士（電通大）" } }
+    { "year": "2026 –", "label": { "en": "Working PhD Student, UEC — Kajimoto Lab", "ja": "社会人博士（電通大 梶本研）" } },
+    { "year": "2024 –", "label": { "en": "Toyota Central R&D Labs, Nagakute Campus (Collaborative Intelligence Research Domain)", "ja": "豊田中央研究所 長久手キャンパス（協働知性研究領域）" } },
+    { "year": "2024",   "label": { "en": "MEng, UEC",              "ja": "修士（電通大）" } },
+    { "year": "2022",   "label": { "en": "BEng, UEC",              "ja": "学士（電通大）" } },
+    { "year": "2020",   "label": { "en": "Associate Degree, Ichinoseki National College of Technology", "ja": "準学士（一関高専）" } }
   ]
 }

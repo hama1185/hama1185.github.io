@@ -1,0 +1,66 @@
+---
+// src/pages/research.astro
+import Base from '../../layouts/Base.astro';
+import ThemeCard from '../../components/ThemeCard.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import themes from '../../data/themes.json';
+import projectsData from '../../data/projects.json';
+import { ui } from '../../lib/site';
+import { t, type Lang } from '../../lib/i18n';
+
+const lang: Lang = 'ja';
+const research = projectsData.filter((p) => p.category !== 'personal');
+const personal = projectsData.filter((p) => p.category === 'personal');
+---
+<Base title="Research" active="research" lang={lang} width="wide">
+
+  <header class="head">
+    <h1>Research</h1>
+    <p>How can we make virtual objects feel real? My research builds haptic interfaces that render
+       force, weight, and texture — combining perceptual science with wearable hardware.</p>
+  </header>
+
+  <section class="themes">
+    {themes.map((th, i) => (
+      <ThemeCard index={i + 1} title={th.title} description={th.description} stats={th.stats} variant="detail" lang={lang} />
+    ))}
+  </section>
+
+  <section class="block">
+    <h2>{t(ui.projects, lang)}</h2>
+    <div class="grid">
+      {research.map((p) => <ProjectCard {...p} lang={lang} />)}
+    </div>
+  </section>
+
+  {personal.length > 0 && (
+    <section class="block personal">
+      <h2>{t(ui.personal, lang)}</h2>
+      <p class="note">研究とは別に、趣味で制作したもの。その中から評価いただいたものを掲載しています。</p>
+      <div class="grid">
+        {personal.map((p) => <ProjectCard {...p} lang={lang} />)}
+      </div>
+    </section>
+  )}
+
+</Base>
+
+<style>
+  .head { max-width: 720px; padding: 72px 0 8px; }
+  .head h1 { font-size: var(--text-h1); font-weight: 600; letter-spacing: -0.02em; }
+  .head p { margin-top: 16px; font-size: 16.5px; line-height: 1.8; color: var(--color-text); }
+
+  .themes { display: flex; flex-direction: column; gap: 20px; padding: 40px 0 56px; }
+
+  .block { padding: 56px 0; border-top: 1px solid var(--color-border); }
+  .block h2 { font-size: var(--text-h2); letter-spacing: -0.01em; margin-bottom: 28px; }
+  .personal { background: var(--color-subtle); border-radius: var(--radius-md); padding: 48px; }
+  .personal .note { margin: -18px 0 24px; font-size: 14.5px; line-height: 1.7; color: var(--color-muted-text); max-width: 520px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) {
+    .grid { grid-template-columns: 1fr; }
+    .personal { padding: 28px 20px; }
+  }
+</style>

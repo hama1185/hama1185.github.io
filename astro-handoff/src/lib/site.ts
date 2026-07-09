@@ -3,10 +3,11 @@ import type { I18n } from './i18n';
 
 export const site = {
   wordmark: 'Hamazaki',
-  copyright: '© 2026 Ren Hamazaki',
+  copyright: '© 2026 Takumi Hamazaki',
 };
 
 export const nav: { href: string; key: string; label: I18n }[] = [
+  { href: '/',              key: 'home',         label: { en: 'Home',         ja: 'ホーム' } },
   { href: '/research',      key: 'research',     label: { en: 'Research',     ja: '研究' } },
   { href: '/publications',  key: 'publications', label: { en: 'Publications', ja: '文献' } },
   { href: '/cv',            key: 'cv',           label: { en: 'CV',           ja: 'CV' } },

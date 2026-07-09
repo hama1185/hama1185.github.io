@@ -1,20 +1,29 @@
 [
   {
-    "id": "pseudo-haptics",
-    "title": { "en": "Pseudo-Haptics", "ja": "擬似触覚" },
+    "id": "chemical-haptics",
+    "title": { "en": "Chemical Haptics", "ja": "ケミカルハプティクス" },
     "description": {
-      "en": "Using visual–haptic conflict to create the perception of weight, resistance, and stiffness without physical force from a device — toward lightweight force feedback in VR.",
-      "ja": "視覚と触覚の不一致を利用し、デバイスの物理的な力なしに重さ・抵抗感・硬さを知覚的に生み出す。VR での軽量な力覚提示を目指す。"
+      "en": "Using chemical substances to evoke thermal and tactile sensations. I induce the thermal grill illusion — a burning sensation from interleaved warm and cold — chemically rather than with thermal devices, and present popping sensations from sprays, linking stimulus design to perception through psychophysics.",
+      "ja": "化学物質を用いて温度感覚や触感を生み出す研究。温冷交互刺激による灼熱感（サーマルグリル錯覚）を、熱デバイスではなく化学的に誘発する研究や、スプレーによる破裂感提示など。刺激設計と知覚を心理物理実験で結びつける。"
     },
-    "stats": { "en": "4 papers · 2 demos", "ja": "論文4 · デモ2" }
+    "stats": { "en": "6 papers", "ja": "論文6" }
   },
   {
-    "id": "electro-tactile-display",
-    "title": { "en": "Electro-Tactile Display", "ja": "電気触覚ディスプレイ" },
+    "id": "electrical-stimulation",
+    "title": { "en": "Electrical Stimulation", "ja": "電気刺激触覚" },
     "description": {
-      "en": "Precisely controlling electrical stimulation of the skin to present material textures, and mapping stimulus waveforms to perception through experiments.",
-      "ja": "皮膚への電気刺激を精密に制御し、材質感やテクスチャを提示する。刺激波形と知覚の対応づけを実験的に明らかにする。"
+      "en": "Making electro-tactile displays comfortable and expressive. By applying anesthetic cream I suppress the itch and pain of electrical stimulation and widen its usable dynamic range, enabling stronger and clearer pressure and vibration cues.",
+      "ja": "電気触覚ディスプレイを快適かつ表現力豊かにする研究。麻酔クリームの併用で電気刺激に伴う痒みや痛みを抑え、利用可能なダイナミックレンジを拡張して、より強く明瞭な圧覚・振動提示を可能にする。"
     },
-    "stats": { "en": "3 papers", "ja": "論文3" }
+    "stats": { "en": "2 papers", "ja": "論文2" }
+  },
+  {
+    "id": "thermal-cooling-feedback",
+    "title": { "en": "Thermal & Cooling Feedback", "ja": "温冷フィードバック" },
+    "description": {
+      "en": "Wearable devices that deliver warmth and cold in everyday settings. ALCool harnesses alcohol's evaporative cooling for ubiquitous cold feedback, and Enchanted Touch layers thermal and vibrotactile cues onto real objects without covering the fingerpad.",
+      "ja": "日常環境で温かさ・冷たさを提示するウェアラブルデバイス。ALCool はアルコールの気化熱を利用したユビキタスな冷感提示、Enchanted Touch は指腹を覆わずに実物体へ温冷・振動を重ねて提示する。"
+    },
+    "stats": { "en": "2 papers", "ja": "論文2" }
   }
 ]

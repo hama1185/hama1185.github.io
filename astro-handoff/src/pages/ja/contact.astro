@@ -1,12 +1,12 @@
 ---
 // src/pages/contact.astro
-import Base from '../layouts/Base.astro';
-import Button from '../components/Button.astro';
-import profile from '../data/profile.json';
-import { ui } from '../lib/site';
-import { t, type Lang } from '../lib/i18n';
+import Base from '../../layouts/Base.astro';
+import Button from '../../components/Button.astro';
+import profile from '../../data/profile.json';
+import { ui } from '../../lib/site';
+import { t, type Lang } from '../../lib/i18n';
 
-const lang: Lang = 'en';
+const lang: Lang = 'ja';
 const decodeEmail = (value: string) => value.replace(/\s*\[at\]\s*/g, '@');
 const emails = profile.emails?.length ? profile.emails : [profile.email];
 ---

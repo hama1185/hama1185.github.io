@@ -1,25 +1,17 @@
 ---
 // src/pages/cv.astro
-import Base from '../layouts/Base.astro';
-import Section from '../components/Section.astro';
-import Button from '../components/Button.astro';
-import Tag from '../components/Tag.astro';
-import profile from '../data/profile.json';
-import cv from '../data/cv.json';
-import pubsData from '../data/publications.json';
-import { ui } from '../lib/site';
-import { t, withBase, type Lang } from '../lib/i18n';
+import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
+import Button from '../../components/Button.astro';
+import Tag from '../../components/Tag.astro';
+import profile from '../../data/profile.json';
+import cv from '../../data/cv.json';
+import pubsData from '../../data/publications.json';
+import { ui } from '../../lib/site';
+import { t, withBase, type Lang } from '../../lib/i18n';
 
-const lang: Lang = 'en';
+const lang: Lang = 'ja';
 const pubs = [...pubsData].sort((a, b) => b.year - a.year).slice(0, 4);
-
-// Honors grouped by scope (international first), preserving array order within each.
-const honorGroups = [
-  { scope: 'international', label: 'International' },
-  { scope: 'domestic', label: 'Domestic' },
-]
-  .map((g) => ({ ...g, items: cv.honors.filter((h) => h.scope === g.scope) }))
-  .filter((g) => g.items.length > 0);
 ---
 <Base title="CV" active="cv" lang={lang} width="read">
 
@@ -68,7 +60,7 @@ const honorGroups = [
           </li>
         ))}
       </ol>
-      <a class="more" href={withBase('/publications')}>{t(ui.fullList, lang)} ↗</a>
+      <a class="more" href={withBase('/ja/publications')}>{t(ui.fullList, lang)} ↗</a>
     </Section>
 
     <Section label="Academic Service" divider>
@@ -80,16 +72,11 @@ const honorGroups = [
     </Section>
 
     <Section label="Honors and Awards" divider>
-      {honorGroups.map((g) => (
-        <div class="subgroup">
-          <h3 class="subhead">{g.label}</h3>
-          <ul class="list">
-            {g.items.map((h) => (
-              <li><span class="year">{h.year}</span><p>{t(h.label, lang)}</p></li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      <ul class="list">
+        {cv.honors.map((h) => (
+          <li><span class="year">{h.year}</span><p>{t(h.label, lang)}</p></li>
+        ))}
+      </ul>
     </Section>
 
     <Section label="Skills" divider>
@@ -125,9 +112,6 @@ const honorGroups = [
   .list { gap: 16px; }
   .list li { display: flex; gap: 20px; }
   .list p { font-size: 14.5px; color: var(--color-text); line-height: 1.6; }
-
-  .subgroup + .subgroup { margin-top: 28px; }
-  .subhead { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-muted-text); margin-bottom: 16px; }
 
   .pubs { gap: 20px; }
   .pubs li { display: flex; gap: 16px; }

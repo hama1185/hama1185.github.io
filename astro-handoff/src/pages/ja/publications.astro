@@ -1,0 +1,20 @@
+---
+// src/pages/publications.astro
+import Base from '../../layouts/Base.astro';
+import PublicationList from '../../components/PublicationList.astro';
+import { type Lang } from '../../lib/i18n';
+const lang: Lang = 'ja';
+---
+<Base title="Publications" active="publications" lang={lang} width="read">
+  <header class="head">
+    <h1>Publications</h1>
+  </header>
+  <PublicationList showFilter={true} lang={lang} />
+  <div class="spacer"></div>
+</Base>
+
+<style>
+  .head { padding: 72px 0 24px; }
+  .head h1 { font-size: var(--text-h1); font-weight: 600; letter-spacing: -0.02em; }
+  .spacer { height: 24px; }
+</style>

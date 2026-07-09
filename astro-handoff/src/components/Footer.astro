@@ -6,6 +6,9 @@ import type { Lang } from '../lib/i18n';
 interface Props { lang?: Lang; }
 const { lang = 'en' } = Astro.props;
 const links = profile.links;
+const decodeEmail = (value: string) => value.replace(/\s*\[at\]\s*/g, '@');
+const emails = profile.emails?.length ? profile.emails : [profile.email];
+const emailLabel = (index: number) => index === 0 ? 'Email (Lab)' : index === 1 ? 'Email (Work)' : `Email ${index + 1}`;
 ---
 <footer class="footer">
   <div class="inner container-pad">
@@ -13,7 +16,9 @@ const links = profile.links;
     <nav class="social" aria-label="Elsewhere">
       {links.scholar && <a href={links.scholar}>Scholar</a>}
       {links.github  && <a href={links.github}>GitHub</a>}
-      <a href={`mailto:${profile.email.replace(' [at] ', '@')}`}>Email</a>
+      {emails.map((email, index) => (
+        <a href={`mailto:${decodeEmail(email)}`}>{emailLabel(index)}</a>
+      ))}
     </nav>
   </div>
 </footer>

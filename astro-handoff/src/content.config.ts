@@ -23,7 +23,7 @@ const publications = defineCollection({
       doi: z.string().optional(),
       video: z.string().optional(),
     }).partial(),
-    award: z.string().optional(),
+    award: i18n.nullable().optional(),   // localised award label ({ en, ja? }) or null
   }),
 });
 
@@ -45,18 +45,14 @@ const themes = defineCollection({
   schema: z.object({ title: i18n, description: i18n, stats: i18n.optional() }),
 });
 
-const awards = defineCollection({
-  loader: file('src/data/awards.json'),
-  schema: z.object({ year: z.number(), label: i18n }),
-});
-
 const news = defineCollection({
   loader: file('src/data/news.json'),
   schema: z.object({ date: z.string(), text: i18n }),
 });
 
-export const collections = { publications, projects, themes, awards, news };
+export const collections = { publications, projects, themes, news };
 
 // profile.json and cv.json are singletons, not collections — import them directly:
 //   import profile from '../data/profile.json';
 //   import cv from '../data/cv.json';
+// Awards/honors live in cv.json (rendered on the CV page); there is no awards collection.

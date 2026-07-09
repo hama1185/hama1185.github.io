@@ -5,19 +5,47 @@ import { t, withBase, type Lang } from '../lib/i18n';
 
 interface Props { active?: string; lang?: Lang; }
 const { active, lang = 'en' } = Astro.props;
-const other = lang === 'ja' ? 'en' : 'ja';
+const normalizePath = (path: string): string => {
+  const merged = path.replace(/\/{2,}/g, '/').replace(/\/+$/g, '');
+  if (!merged) return '/';
+  return merged.startsWith('/') ? merged : `/${merged}`;
+};
+const localizePath = (path: string, target: Lang): string => {
+  const normalized = normalizePath(path);
+  if (target === 'ja') {
+    if (normalized === '/ja' || normalized.startsWith('/ja/')) return normalized;
+    return normalized === '/' ? '/ja' : `/ja${normalized}`;
+  }
+  const stripped = normalized.replace(/^\/ja(?=\/|$)/, '');
+  return stripped || '/';
+};
+const basePath = normalizePath(import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+const stripBase = (pathname: string): string => {
+  const normalized = normalizePath(pathname);
+  if (!basePath || basePath === '/') return normalized;
+  if (!normalized.startsWith(basePath)) return normalized;
+  return normalizePath(normalized.slice(basePath.length) || '/');
+};
+const navHref = (path: string): string => withBase(localizePath(path, lang));
+const currentPath = stripBase(Astro.url.pathname);
+const enHref = withBase(localizePath(currentPath, 'en'));
+const jaHref = withBase(localizePath(currentPath, 'ja'));
 ---
 <header class="nav">
-  <a class="wordmark" href={withBase('/')}>{site.wordmark}</a>
+  <a class="wordmark" href={navHref('/')}>{site.wordmark}</a>
 
   <!-- Desktop -->
   <nav class="links" aria-label="Primary">
     {nav.map((item) => (
-      <a href={withBase(item.href)} class:list={['link', { active: active === item.key }]}>
+      <a href={navHref(item.href)} class:list={['link', { active: active === item.key }]}>
         {t(item.label, lang)}
       </a>
     ))}
-    <a class="lang" href="#" data-lang={other}>EN / 日本語</a>
+    <div class="lang-switch" aria-label="Language">
+      <a class:list={['lang', { 'active-lang': lang === 'en' }]} href={enHref} aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <a class:list={['lang', { 'active-lang': lang === 'ja' }]} href={jaHref} aria-current={lang === 'ja' ? 'page' : undefined}>日本語</a>
+    </div>
   </nav>
 
   <!-- Mobile -->
@@ -25,11 +53,15 @@ const other = lang === 'ja' ? 'en' : 'ja';
     <summary aria-label="Menu"><span></span><span></span><span></span></summary>
     <div class="sheet">
       {nav.map((item) => (
-        <a href={withBase(item.href)} class:list={['link', { active: active === item.key }]}>
+        <a href={navHref(item.href)} class:list={['link', { active: active === item.key }]}>
           {t(item.label, lang)}
         </a>
       ))}
-      <a class="lang" href="#" data-lang={other}>EN / 日本語</a>
+      <div class="lang-switch" aria-label="Language">
+        <a class:list={['lang', { 'active-lang': lang === 'en' }]} href={enHref} aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <a class:list={['lang', { 'active-lang': lang === 'ja' }]} href={jaHref} aria-current={lang === 'ja' ? 'page' : undefined}>日本語</a>
+      </div>
     </div>
   </details>
 </header>
@@ -48,10 +80,15 @@ const other = lang === 'ja' ? 'en' : 'ja';
   .link { font-size: 14px; color: var(--color-muted-text); padding-bottom: 4px; }
   .link:hover { color: var(--color-text); }
   .link.active { color: var(--color-text); border-bottom: 2px solid var(--color-accent); }
-  .lang {
-    font-family: var(--font-mono); font-size: 11px; color: var(--color-faint-text);
+  .lang-switch {
+    display: flex; align-items: center; gap: 8px;
     border-left: 1px solid var(--color-border); padding-left: 18px;
+    font-family: var(--font-mono); font-size: 11px;
   }
+  .lang { color: var(--color-faint-text); }
+  .lang:hover { color: var(--color-text); }
+  .lang.active-lang { color: var(--color-text); text-decoration: underline; text-underline-offset: 3px; }
+  .sep { color: var(--color-faint-text); }
   .menu { display: none; }
 
   @media (max-width: 640px) {
@@ -69,8 +106,10 @@ const other = lang === 'ja' ? 'en' : 'ja';
       border-radius: var(--radius-md); box-shadow: var(--shadow-card);
       display: flex; flex-direction: column; padding: 8px;
     }
-    .sheet .link, .sheet .lang {
-      border: 0; padding: 12px 14px; min-height: 44px; display: flex; align-items: center;
+    .sheet .link { border: 0; padding: 12px 14px; min-height: 44px; display: flex; align-items: center; }
+    .sheet .lang-switch {
+      border: 0; padding: 12px 14px; min-height: 44px;
+      display: flex; align-items: center; gap: 10px;
     }
   }
 </style>

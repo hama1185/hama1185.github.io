@@ -10,7 +10,7 @@ interface Props {
   venue: { short: string; type: string };
   year: number;
   links?: { pdf?: string; doi?: string; video?: string };
-  award?: string;
+  award?: I18n;
   variant?: 'full' | 'compact';
   lang?: Lang;
 }
@@ -19,7 +19,11 @@ const href = links.doi || links.pdf || '#';
 ---
 <article class:list={['pub', variant]} data-type={venue.type}>
   {variant === 'full' && (
-    <div class="venue">{venue.short}<br /><span>{venue.type}</span></div>
+    <div class="venue">
+      <div class="v-year">{year}</div>
+      <div class="v-name">{venue.short}</div>
+      <div class="v-type">{venue.type}</div>
+    </div>
   )}
   <div class="body">
     {variant === 'compact' && (
@@ -38,16 +42,20 @@ const href = links.doi || links.pdf || '#';
         {links.video && <a href={links.video}>Video</a>}
       </div>
     )}
-    {award && <div class="award">{award}</div>}
+    {award && (
+      <div class="award"><span class="award-ico" aria-hidden="true">🏆</span>{t(award, lang)}</div>
+    )}
   </div>
 </article>
 
 <style>
   .pub.full { display: grid; grid-template-columns: 130px 1fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--color-subtle); }
   .pub.compact { display: flex; flex-direction: column; gap: 5px; }
-  .venue { font-family: var(--font-mono); font-size: 11px; color: var(--color-muted-text); line-height: 1.6; text-transform: uppercase; }
-  .venue span { color: var(--color-faint-text); }
-  .stamp { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; color: var(--color-faint-text); }
+  .venue { font-family: var(--font-mono); line-height: 1.45; text-transform: uppercase; }
+  .v-year { font-size: 15px; font-weight: 700; color: var(--color-text); letter-spacing: 0.01em; }
+  .v-name { margin-top: 3px; font-size: 11.5px; font-weight: 600; color: var(--color-text); }
+  .v-type { margin-top: 1px; font-size: 10.5px; font-weight: 500; color: var(--color-muted-text); }
+  .stamp { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.04em; color: var(--color-muted-text); }
   .title { font-size: 16.5px; font-weight: 600; color: var(--color-text); line-height: 1.45; }
   .compact .title { font-size: 15.5px; }
   .title:hover { color: var(--color-accent); }
@@ -55,7 +63,8 @@ const href = links.doi || links.pdf || '#';
   .authors strong { color: var(--color-text); font-weight: 600; }
   .links { display: flex; gap: 8px; margin-top: 12px; }
   .links a { font-family: var(--font-mono); font-size: 11px; color: var(--color-accent); border: 1px solid var(--color-accent-border); padding: 6px 11px; border-radius: 5px; min-height: 32px; display: inline-flex; align-items: center; }
-  .award { margin-top: 10px; font-family: var(--font-mono); font-size: 11px; color: var(--color-accent); }
+  .award { display: inline-flex; align-items: center; gap: 5px; margin-top: 10px; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-accent); }
+  .award-ico { font-size: 12px; line-height: 1; opacity: 0.9; }
   @media (max-width: 640px) {
     .pub.full { grid-template-columns: 1fr; gap: 10px; }
     .venue { order: -1; }
