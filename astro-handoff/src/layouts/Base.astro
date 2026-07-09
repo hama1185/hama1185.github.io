@@ -1,0 +1,41 @@
+---
+// src/layouts/Base.astro — document shell: head, fonts, tokens, nav, footer.
+import '../styles/tokens.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import type { Lang } from '../lib/i18n';
+
+interface Props {
+  title: string;
+  active?: string;          // nav key of the current page
+  lang?: Lang;
+  width?: 'wide' | 'read';  // content max-width
+}
+const { title, active, lang = 'en', width = 'wide' } = Astro.props;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Nav active={active} lang={lang} />
+    <main class:list={['container', width]}>
+      <slot />
+    </main>
+    <Footer lang={lang} />
+    <style>
+      .container { margin: 0 auto; padding: 0 var(--pad-page); }
+      .container.wide { max-width: var(--maxw-wide); }
+      .container.read { max-width: var(--maxw-read); }
+    </style>
+  </body>
+</html>

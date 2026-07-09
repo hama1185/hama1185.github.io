@@ -1,0 +1,43 @@
+[
+  {
+    "id": "whc2025-phantom",
+    "year": 2025,
+    "venue": { "short": "IEEE World Haptics", "type": "conference" },
+    "title": { "en": "Rendering Phantom Sensation on the Forearm via Asymmetric Vibration" },
+    "authors": ["R. Hamazaki", "K. Mizoguchi", "H. Kajimoto"],
+    "self": "R. Hamazaki",
+    "links": { "pdf": "", "doi": "", "video": "" },
+    "award": ""
+  },
+  {
+    "id": "siggraph2025-weight",
+    "year": 2025,
+    "venue": { "short": "SIGGRAPH", "type": "poster" },
+    "title": { "en": "Perceived Weight Modulation using Visual–Haptic Conflict in VR" },
+    "authors": ["R. Hamazaki", "H. Kajimoto"],
+    "self": "R. Hamazaki",
+    "links": { "pdf": "", "doi": "" },
+    "award": ""
+  },
+  {
+    "id": "vrsj2024-material",
+    "year": 2024,
+    "venue": { "short": "VRSJ Annual", "type": "domestic" },
+    "title": { "en": "Basic study of material texture presentation using an electro-tactile display",
+               "ja": "電気触覚ディスプレイによる材質感提示の基礎検討" },
+    "authors": ["濱口 蓮", "梶本 裕之"],
+    "self": "濱口 蓮",
+    "links": { "pdf": "" },
+    "award": ""
+  },
+  {
+    "id": "haptics2024-directional",
+    "year": 2024,
+    "venue": { "short": "Haptics Symposium", "type": "poster" },
+    "title": { "en": "A Wearable Approach to Directional Force Cues on the Arm" },
+    "authors": ["R. Hamazaki", "K. Ushiyama", "H. Kajimoto"],
+    "self": "R. Hamazaki",
+    "links": { "pdf": "", "doi": "" },
+    "award": ""
+  }
+]

@@ -1,0 +1,76 @@
+---
+// src/components/Nav.astro — sticky top nav. Desktop = inline links; mobile = hamburger (<details>, no JS).
+import { site, nav } from '../lib/site';
+import { t, withBase, type Lang } from '../lib/i18n';
+
+interface Props { active?: string; lang?: Lang; }
+const { active, lang = 'en' } = Astro.props;
+const other = lang === 'ja' ? 'en' : 'ja';
+---
+<header class="nav">
+  <a class="wordmark" href={withBase('/')}>{site.wordmark}</a>
+
+  <!-- Desktop -->
+  <nav class="links" aria-label="Primary">
+    {nav.map((item) => (
+      <a href={withBase(item.href)} class:list={['link', { active: active === item.key }]}>
+        {t(item.label, lang)}
+      </a>
+    ))}
+    <a class="lang" href="#" data-lang={other}>EN / 日本語</a>
+  </nav>
+
+  <!-- Mobile -->
+  <details class="menu">
+    <summary aria-label="Menu"><span></span><span></span><span></span></summary>
+    <div class="sheet">
+      {nav.map((item) => (
+        <a href={withBase(item.href)} class:list={['link', { active: active === item.key }]}>
+          {t(item.label, lang)}
+        </a>
+      ))}
+      <a class="lang" href="#" data-lang={other}>EN / 日本語</a>
+    </div>
+  </details>
+</header>
+
+<style>
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px var(--pad-page);
+    border-bottom: 1px solid var(--color-border);
+    background: color-mix(in srgb, var(--color-background) 85%, transparent);
+    backdrop-filter: saturate(1.1) blur(6px);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .wordmark { font-weight: 600; font-size: 16px; letter-spacing: -0.01em; color: var(--color-text); }
+  .links { display: flex; align-items: center; gap: 24px; }
+  .link { font-size: 14px; color: var(--color-muted-text); padding-bottom: 4px; }
+  .link:hover { color: var(--color-text); }
+  .link.active { color: var(--color-text); border-bottom: 2px solid var(--color-accent); }
+  .lang {
+    font-family: var(--font-mono); font-size: 11px; color: var(--color-faint-text);
+    border-left: 1px solid var(--color-border); padding-left: 18px;
+  }
+  .menu { display: none; }
+
+  @media (max-width: 640px) {
+    .links { display: none; }
+    .menu { display: block; position: relative; }
+    .menu summary {
+      list-style: none; cursor: pointer; width: 44px; height: 44px;
+      display: flex; flex-direction: column; justify-content: center; gap: 5px; align-items: flex-end;
+    }
+    .menu summary::-webkit-details-marker { display: none; }
+    .menu summary span { width: 22px; height: 2px; background: var(--color-text); }
+    .sheet {
+      position: absolute; right: 0; top: 48px; min-width: 180px;
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      border-radius: var(--radius-md); box-shadow: var(--shadow-card);
+      display: flex; flex-direction: column; padding: 8px;
+    }
+    .sheet .link, .sheet .lang {
+      border: 0; padding: 12px 14px; min-height: 44px; display: flex; align-items: center;
+    }
+  }
+</style>

@@ -1,0 +1,98 @@
+---
+// src/pages/index.astro — Home
+import Base from '../layouts/Base.astro';
+import Button from '../components/Button.astro';
+import ThemeCard from '../components/ThemeCard.astro';
+import Placeholder from '../components/Placeholder.astro';
+import PublicationList from '../components/PublicationList.astro';
+import profile from '../data/profile.json';
+import themes from '../data/themes.json';
+import news from '../data/news.json';
+import { ui } from '../lib/site';
+import { t, withBase, type Lang } from '../lib/i18n';
+
+const lang: Lang = 'en';
+---
+<Base title={`${t(profile.name, lang)} — Haptics researcher`} active="" lang={lang} width="wide">
+
+  <section class="hero">
+    <div>
+      <div class="tagline">{t(profile.tagline, lang)}</div>
+      <h1>{t(profile.name, lang)}</h1>
+      <p class="role">{t(profile.role, lang)}</p>
+      <p class="bio">{t(profile.bio, lang)}</p>
+      <div class="actions">
+        <Button href={withBase('/research')}>{t(ui.viewResearch, lang)}</Button>
+        {profile.links.scholar && <a class="ext" href={profile.links.scholar}>Google Scholar ↗</a>}
+      </div>
+    </div>
+    <Placeholder caption="portrait" height="300px" />
+  </section>
+
+  <section class="about">
+    <div>
+      <h2>{t(ui.about, lang)}</h2>
+      <p class="body">{t(profile.bio, lang)}</p>
+    </div>
+    <div>
+      <div class="mono-label">{t(ui.timeline, lang)}</div>
+      <ul class="timeline">
+        {profile.timeline.map((row) => (
+          <li><span class="yr">{row.year}</span><span>{t(row.label, lang)}</span></li>
+        ))}
+        <li class="more"><a href={withBase('/cv')}>{t(ui.fullCv, lang)} ↗</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="feed">
+    <div>
+      <h2>{t(ui.recentPubs, lang)}</h2>
+      <PublicationList limit={3} lang={lang} />
+    </div>
+    <div>
+      <h2>{t(ui.news, lang)}</h2>
+      <ul class="news">
+        {news.map((n) => (
+          <li><span class="date">{n.date}</span><span>{t(n.text, lang)}</span></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  h1 { font-size: var(--text-display); font-weight: 600; letter-spacing: var(--tracking-tight, -0.02em); line-height: 1.08; }
+  h2 { font-size: var(--text-h2); letter-spacing: -0.01em; }
+
+  .hero { display: grid; grid-template-columns: 1fr 240px; gap: 56px; align-items: flex-start; padding: 80px 0; }
+  .tagline { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px; }
+  .role { margin-top: 10px; font-size: 17px; color: var(--color-muted-text); }
+  .bio { margin-top: 28px; font-size: 16.5px; line-height: 1.8; color: var(--color-text); max-width: 560px; }
+  .actions { margin-top: 32px; display: flex; gap: 18px; align-items: center; }
+  .ext { font-size: 14px; font-weight: 500; color: var(--color-accent); border-bottom: 1px solid var(--color-accent); padding-bottom: 1px; }
+
+  .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; padding: 56px 0; border-top: 1px solid var(--color-border); }
+  .about .body { margin-top: 18px; font-size: 16px; line-height: 1.85; color: var(--color-text); }
+  .timeline { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-direction: column; }
+  .timeline li { display: flex; gap: 16px; padding: 12px 0; border-top: 1px solid var(--color-subtle); font-size: 14px; color: var(--color-text); }
+  .timeline li:first-child { border-top: 0; }
+  .timeline .yr { font-family: var(--font-mono); font-size: 11px; color: var(--color-accent); width: 60px; flex-shrink: 0; }
+  .timeline .more a { font-family: var(--font-mono); font-size: 12px; color: var(--color-accent); }
+
+  .feed { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; padding: 56px 0; border-top: 1px solid var(--color-border); }
+  .feed h2 { margin-bottom: 24px; }
+  .news { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px; }
+  .news li { display: flex; gap: 14px; font-size: 13.5px; line-height: 1.6; color: var(--color-text); }
+  .news .date { font-family: var(--font-mono); font-size: 11px; color: var(--color-faint-text); width: 64px; flex-shrink: 0; }
+
+  @media (max-width: 900px) {
+    .about, .feed { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 640px) {
+    .hero { grid-template-columns: 1fr; gap: 32px; padding: 40px 0; }
+    .hero > :global(.ph) { order: -1; }
+    .actions { flex-wrap: wrap; }
+  }
+</style>

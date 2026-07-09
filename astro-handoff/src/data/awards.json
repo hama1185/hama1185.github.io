@@ -1,0 +1,6 @@
+[
+  { "id": "sice-si-2025", "year": 2025,
+    "label": { "en": "Best Presentation Award, SICE SI Division", "ja": "優秀講演賞、計測自動制御学会 SI部門" } },
+  { "id": "ieee-travel-2024", "year": 2024,
+    "label": { "en": "Student Travel Grant, IEEE Haptics", "ja": "学生渡航支援、IEEE Haptics" } }
+]

@@ -1,0 +1,45 @@
+---
+// src/components/ThemeCard.astro
+import { t, type Lang, type I18n } from '../lib/i18n';
+interface Props {
+  index: number;
+  title: I18n; description: I18n; stats?: I18n;
+  variant?: 'compact' | 'detail';
+  lang?: Lang;
+}
+const { index, title, description, stats, variant = 'compact', lang = 'en' } = Astro.props;
+const num = String(index).padStart(2, '0');
+---
+<article class:list={['card', variant]}>
+  <div class="content">
+    <div class="label">Theme {num}</div>
+    <h3>{t(title, lang)}</h3>
+    <p>{t(description, lang)}</p>
+    {stats && <div class="stats">{t(stats, lang)} ↗</div>}
+  </div>
+  {variant === 'detail' && <div class="fig"><span>figure</span></div>}
+</article>
+
+<style>
+  .card {
+    background: var(--color-surface); border: 1px solid var(--color-border);
+    border-radius: var(--radius-md); padding: 24px;
+  }
+  .card.detail { display: grid; grid-template-columns: 1fr 200px; gap: 32px; align-items: center; padding: 32px; }
+  .label { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 12px; }
+  h3 { font-size: 18px; }
+  .detail h3 { font-size: 23px; letter-spacing: -0.01em; }
+  p { margin-top: 9px; font-size: 13.5px; line-height: 1.7; color: var(--color-muted-text); }
+  .detail p { font-size: 15px; line-height: 1.75; max-width: 520px; }
+  .stats { margin-top: 18px; font-family: var(--font-mono); font-size: 11px; color: var(--color-accent); }
+  .fig {
+    height: 150px; border-radius: var(--radius-sm);
+    background: repeating-linear-gradient(135deg,#EDF1F0,#EDF1F0 10px,#E4E9E8 10px,#E4E9E8 20px);
+    border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center;
+  }
+  .fig span { font-family: var(--font-mono); font-size: 11px; color: var(--color-faint-text); }
+  @media (max-width: 640px) {
+    .card.detail { grid-template-columns: 1fr; gap: 20px; }
+    .fig { order: -1; }
+  }
+</style>

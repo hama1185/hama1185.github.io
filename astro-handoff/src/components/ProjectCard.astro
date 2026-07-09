@@ -1,0 +1,36 @@
+---
+// src/components/ProjectCard.astro
+import Placeholder from './Placeholder.astro';
+import { t, type Lang, type I18n } from '../lib/i18n';
+interface Props {
+  year: number; tag: string;
+  title: I18n; description: I18n;
+  award?: I18n | null; image?: string;
+  lang?: Lang;
+}
+const { year, tag, title, description, award, image, lang = 'en' } = Astro.props;
+---
+<article class="card">
+  <Placeholder caption="project shot" src={image} alt={t(title, lang)} />
+  <div class="body">
+    <div class="meta"><span class="tag">{tag}</span><span class="year">{year}</span></div>
+    <h3>{t(title, lang)}</h3>
+    <p>{t(description, lang)}</p>
+    {award && (
+      <div class="award"><span class="dot"></span><span>{t(award, lang)}</span></div>
+    )}
+  </div>
+</article>
+
+<style>
+  .card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; }
+  .body { padding: 20px; }
+  .meta { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-muted-text); background: var(--color-subtle); border: 1px solid var(--color-border); padding: 2px 8px; border-radius: 4px; }
+  .year { font-family: var(--font-mono); font-size: 10.5px; color: var(--color-faint-text); }
+  h3 { font-size: 16.5px; }
+  p { margin-top: 7px; font-size: 13px; line-height: 1.65; color: var(--color-muted-text); }
+  .award { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--color-subtle); display: flex; align-items: center; gap: 8px; }
+  .award .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--color-accent); flex-shrink: 0; }
+  .award span:last-child { font-family: var(--font-mono); font-size: 10.5px; color: var(--color-accent); line-height: 1.4; }
+</style>

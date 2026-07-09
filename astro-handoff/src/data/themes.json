@@ -1,0 +1,20 @@
+[
+  {
+    "id": "pseudo-haptics",
+    "title": { "en": "Pseudo-Haptics", "ja": "擬似触覚" },
+    "description": {
+      "en": "Using visual–haptic conflict to create the perception of weight, resistance, and stiffness without physical force from a device — toward lightweight force feedback in VR.",
+      "ja": "視覚と触覚の不一致を利用し、デバイスの物理的な力なしに重さ・抵抗感・硬さを知覚的に生み出す。VR での軽量な力覚提示を目指す。"
+    },
+    "stats": { "en": "4 papers · 2 demos", "ja": "論文4 · デモ2" }
+  },
+  {
+    "id": "electro-tactile-display",
+    "title": { "en": "Electro-Tactile Display", "ja": "電気触覚ディスプレイ" },
+    "description": {
+      "en": "Precisely controlling electrical stimulation of the skin to present material textures, and mapping stimulus waveforms to perception through experiments.",
+      "ja": "皮膚への電気刺激を精密に制御し、材質感やテクスチャを提示する。刺激波形と知覚の対応づけを実験的に明らかにする。"
+    },
+    "stats": { "en": "3 papers", "ja": "論文3" }
+  }
+]

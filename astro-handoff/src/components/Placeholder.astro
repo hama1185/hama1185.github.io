@@ -1,0 +1,19 @@
+---
+// src/components/Placeholder.astro — striped image slot with a mono caption.
+// Swap for <Image> once real assets exist.
+interface Props { caption?: string; height?: string; src?: string; alt?: string; }
+const { caption = 'image', height = '150px', src, alt = '' } = Astro.props;
+---
+{src
+  ? <img src={src} alt={alt} class="img" style={`height:${height}`} />
+  : <div class="ph" style={`height:${height}`}><span>{caption}</span></div>}
+
+<style>
+  .img { width: 100%; object-fit: cover; display: block; }
+  .ph {
+    width: 100%; display: flex; align-items: center; justify-content: center;
+    background: repeating-linear-gradient(135deg,#EDF1F0,#EDF1F0 10px,#E4E9E8 10px,#E4E9E8 20px);
+    border: 1px solid var(--color-border);
+  }
+  .ph span { font-family: var(--font-mono); font-size: 11px; color: var(--color-faint-text); }
+</style>

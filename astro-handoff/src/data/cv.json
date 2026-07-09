@@ -1,0 +1,40 @@
+{
+  "researchInterests": {
+    "en": "Haptic interfaces for immersive interaction — pseudo-haptics, electro-tactile display, and wearable force feedback. Bridging perceptual science and hardware prototyping.",
+    "ja": "没入的インタラクションのための触覚インタフェース。擬似触覚・電気触覚ディスプレイ・ウェアラブル力覚提示。知覚科学とハードウェア試作の橋渡し。"
+  },
+  "keywords": ["Haptics", "Pseudo-Haptics", "Electro-Tactile Display", "Virtual Reality", "Wearable Devices"],
+
+  "education": [
+    { "period": "2024 –",  "title": { "en": "PhD, Information Science", "ja": "博士課程（情報学専攻）" },
+      "org": { "en": "The University of Electro-Communications", "ja": "電気通信大学" } },
+    { "period": "2022–24", "title": { "en": "MEng, Mechanical & Intelligent Systems", "ja": "修士（機械知能システム）" },
+      "org": { "en": "The University of Electro-Communications", "ja": "電気通信大学" } }
+  ],
+
+  "appointments": [
+    { "period": "2025 –", "title": { "en": "Research Assistant", "ja": "リサーチアシスタント" },
+      "org": { "en": "Kajimoto Lab, UEC", "ja": "電通大 梶本研究室" } },
+    { "period": "2023 –", "title": { "en": "Teaching Assistant", "ja": "ティーチングアシスタント" },
+      "org": { "en": "Interaction & embedded systems course.", "ja": "インタラクション・組込みシステム演習." } }
+  ],
+
+  "_publications": "Rendered from the publications collection (see publications.json). Do not duplicate here.",
+
+  "service": [
+    { "year": 2025, "label": { "en": "Reviewer — IEEE World Haptics Conference", "ja": "査読 — IEEE World Haptics Conference" } },
+    { "year": 2024, "label": { "en": "Student Volunteer — SIGGRAPH Asia", "ja": "学生ボランティア — SIGGRAPH Asia" } }
+  ],
+
+  "honors": [
+    { "year": 2025, "label": { "en": "Best Presentation Award, SICE SI Division", "ja": "優秀講演賞、計測自動制御学会 SI部門" } },
+    { "year": 2024, "label": { "en": "Student Travel Grant, IEEE Haptics", "ja": "学生渡航支援、IEEE Haptics" } }
+  ],
+
+  "skills": ["C / C++", "Python", "Unity / C#", "PCB design", "Psychophysics"],
+
+  "exhibitions": [
+    { "year": 2025, "label": { "en": "Innovation Japan — University Expo, Tokyo", "ja": "イノベーション・ジャパン 大学見本市、東京" } },
+    { "year": 2024, "label": { "en": "Interactive demo, IEEE Haptics Symposium", "ja": "インタラクティブデモ、IEEE Haptics Symposium" } }
+  ]
+}

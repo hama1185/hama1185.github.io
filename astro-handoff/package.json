@@ -1,0 +1,12 @@
+{
+  "name": "research-portfolio",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^7.0.7"
+  }
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "asymmetric-vibration-cuff",
+    "category": "research",
+    "year": 2025,
+    "tag": "Wearable",
+    "title": { "en": "Asymmetric Vibration Cuff" },
+    "description": { "en": "A wearable device that presents a pulling sensation on the forearm.",
+                     "ja": "前腕に牽引感を提示する装着型デバイス。" },
+    "award": { "en": "Best Demo Award · WHC 2025", "ja": "ベストデモ賞 · WHC 2025" },
+    "image": "/images/projects/cuff.jpg"
+  },
+  {
+    "id": "weight-illusion-toolkit",
+    "category": "research",
+    "year": 2024,
+    "tag": "VR",
+    "title": { "en": "Weight Illusion Toolkit" },
+    "description": { "en": "An experimental platform for manipulating weight perception in VR.",
+                     "ja": "VR で重さ知覚を操作する実験基盤。" },
+    "award": { "en": "Best Presentation · SICE SI 2025", "ja": "優秀講演賞 · SICE SI 2025" },
+    "image": "/images/projects/weight.jpg"
+  },
+  {
+    "id": "electro-tactile-pad",
+    "category": "research",
+    "year": 2024,
+    "tag": "Hardware",
+    "title": { "en": "Electro-Tactile Pad" },
+    "description": { "en": "A prototype electrode array for material texture presentation.",
+                     "ja": "材質感提示のための電極アレイ試作。" },
+    "award": null,
+    "image": "/images/projects/pad.jpg"
+  },
+  {
+    "id": "personal-project-1",
+    "category": "personal",
+    "year": 2024,
+    "tag": "Fan",
+    "title": { "en": "Project title", "ja": "プロジェクト名" },
+    "description": { "en": "A short summary of the personal project — what it is and why it's fun.",
+                     "ja": "個人制作の概要をここに。何を作ったか・何が面白いかを一言で。" },
+    "award": { "en": "Award name · 2024", "ja": "受賞名 · 2024" },
+    "image": "/images/projects/personal-1.jpg"
+  }
+]

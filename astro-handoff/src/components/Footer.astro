@@ -1,0 +1,33 @@
+---
+// src/components/Footer.astro
+import profile from '../data/profile.json';
+import { site } from '../lib/site';
+import type { Lang } from '../lib/i18n';
+interface Props { lang?: Lang; }
+const { lang = 'en' } = Astro.props;
+const links = profile.links;
+---
+<footer class="footer">
+  <div class="inner container-pad">
+    <span class="copy">{site.copyright}</span>
+    <nav class="social" aria-label="Elsewhere">
+      {links.scholar && <a href={links.scholar}>Scholar</a>}
+      {links.github  && <a href={links.github}>GitHub</a>}
+      <a href={`mailto:${profile.email.replace(' [at] ', '@')}`}>Email</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .footer { border-top: 1px solid var(--color-border); background: var(--color-subtle); margin-top: var(--space-2xl); }
+  .inner {
+    max-width: var(--maxw-wide); margin: 0 auto; padding: 40px var(--pad-page);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .copy { font-size: 13px; color: var(--color-muted-text); }
+  .social { display: flex; gap: 20px; font-size: 13px; }
+  .social a { color: var(--color-accent); }
+  @media (max-width: 640px) {
+    .inner { flex-direction: column; gap: 16px; align-items: flex-start; }
+  }
+</style>

@@ -1,0 +1,22 @@
+{
+  "name":     { "en": "Ren Hamazaki", "ja": "濱口 蓮" },
+  "role":     { "en": "PhD Student, Kajimoto Lab — The University of Electro-Communications",
+                "ja": "博士課程、梶本研究室 — 電気通信大学" },
+  "tagline":  { "en": "Haptics · VR · HCI", "ja": "触覚 · VR · HCI" },
+  "bio": {
+    "en": "I design haptic interfaces that let people feel virtual forces and textures. My work spans pseudo-haptics, electro-tactile display, and wearable devices for immersive interaction.",
+    "ja": "触覚提示と知覚の関係に関心があり、心理物理実験とウェアラブルデバイスの試作を往復しながら研究を進めています。"
+  },
+  "location": { "en": "Tokyo, Japan", "ja": "東京" },
+  "email": "hamazaki [at] kaji-lab.jp",
+  "links": {
+    "scholar": "https://scholar.google.co.jp/citations?user=T81xNa0AAAAJ",
+    "github":  "",
+    "x":       ""
+  },
+  "timeline": [
+    { "year": "2024 –", "label": { "en": "PhD, UEC — Kajimoto Lab", "ja": "博士課程、電通大 梶本研" } },
+    { "year": "2022",   "label": { "en": "MEng, UEC",              "ja": "修士（電通大）" } },
+    { "year": "2018",   "label": { "en": "BEng, UEC",              "ja": "学士（電通大）" } }
+  ]
+}

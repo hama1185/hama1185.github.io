@@ -1,0 +1,126 @@
+---
+// src/pages/cv.astro
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import Button from '../components/Button.astro';
+import Tag from '../components/Tag.astro';
+import profile from '../data/profile.json';
+import cv from '../data/cv.json';
+import pubsData from '../data/publications.json';
+import { ui } from '../lib/site';
+import { t, withBase, type Lang } from '../lib/i18n';
+
+const lang: Lang = 'en';
+const pubs = [...pubsData].sort((a, b) => b.year - a.year).slice(0, 4);
+---
+<Base title="CV" active="cv" lang={lang} width="read">
+
+  <header class="head">
+    <div>
+      <h1>Curriculum Vitae</h1>
+      <p>{t(profile.name, lang)} · {t(profile.role, lang)}</p>
+    </div>
+    <Button href="#" variant="primary">{t(ui.downloadPdf, lang)}</Button>
+  </header>
+
+  <div class="sections">
+    <Section label="Research Interests">
+      <p class="para">{t(cv.researchInterests, lang)}</p>
+    </Section>
+
+    <Section label="Keywords" divider>
+      <div class="tags">{cv.keywords.map((k) => <Tag>{k}</Tag>)}</div>
+    </Section>
+
+    <Section label="Education" divider>
+      <ul class="entries">
+        {cv.education.map((e) => (
+          <li><span class="period">{e.period}</span><div><h3>{t(e.title, lang)}</h3><p>{t(e.org, lang)}</p></div></li>
+        ))}
+      </ul>
+    </Section>
+
+    <Section label="Academic Appointments" divider>
+      <ul class="entries">
+        {cv.appointments.map((e) => (
+          <li><span class="period">{e.period}</span><div><h3>{t(e.title, lang)}</h3><p>{t(e.org, lang)}</p></div></li>
+        ))}
+      </ul>
+    </Section>
+
+    <Section label="Publications" divider>
+      <ol class="pubs">
+        {pubs.map((p) => (
+          <li>
+            <span class="num">{p.venue.type === 'journal' ? 'J' : 'C'}</span>
+            <p>
+              {p.authors.map((a, i) => <>{i > 0 && ', '}{a === p.self ? <strong>{a}</strong> : a}</>)}
+              . “{t(p.title, lang)}.” <em>{p.venue.short}</em>, {p.year}.
+            </p>
+          </li>
+        ))}
+      </ol>
+      <a class="more" href={withBase('/publications')}>{t(ui.fullList, lang)} ↗</a>
+    </Section>
+
+    <Section label="Academic Service" divider>
+      <ul class="list">
+        {cv.service.map((s) => (
+          <li><span class="year">{s.year}</span><p>{t(s.label, lang)}</p></li>
+        ))}
+      </ul>
+    </Section>
+
+    <Section label="Honors and Awards" divider>
+      <ul class="list">
+        {cv.honors.map((h) => (
+          <li><span class="year">{h.year}</span><p>{t(h.label, lang)}</p></li>
+        ))}
+      </ul>
+    </Section>
+
+    <Section label="Skills" divider>
+      <div class="tags">{cv.skills.map((s) => <Tag>{s}</Tag>)}</div>
+    </Section>
+
+    <Section label="Exhibitions" divider>
+      <ul class="list">
+        {cv.exhibitions.map((x) => (
+          <li><span class="year">{x.year}</span><p>{t(x.label, lang)}</p></li>
+        ))}
+      </ul>
+    </Section>
+  </div>
+
+</Base>
+
+<style>
+  .head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding: 72px 0 8px; }
+  .head h1 { font-size: var(--text-h1); font-weight: 600; letter-spacing: -0.02em; }
+  .head p { margin-top: 12px; font-size: 15px; color: var(--color-muted-text); }
+
+  .para { font-size: 15px; line-height: 1.8; color: var(--color-text); max-width: 560px; }
+  .tags { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .entries, .list, .pubs { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; }
+  .entries { gap: 22px; }
+  .entries li { display: flex; gap: 20px; }
+  .entries h3 { font-size: 16.5px; }
+  .entries p { margin-top: 4px; font-size: 13.5px; color: var(--color-muted-text); }
+  .period, .year { font-family: var(--font-mono); font-size: 12px; color: var(--color-faint-text); width: 96px; flex-shrink: 0; }
+
+  .list { gap: 16px; }
+  .list li { display: flex; gap: 20px; }
+  .list p { font-size: 14.5px; color: var(--color-text); line-height: 1.6; }
+
+  .pubs { gap: 20px; }
+  .pubs li { display: flex; gap: 16px; }
+  .pubs .num { font-family: var(--font-mono); font-size: 12px; color: var(--color-faint-text); width: 24px; flex-shrink: 0; }
+  .pubs p { font-size: 14px; line-height: 1.65; color: var(--color-text); }
+  .pubs strong { color: var(--color-text); font-weight: 600; }
+  .more { display: inline-block; margin-top: 20px; font-family: var(--font-mono); font-size: 11px; color: var(--color-accent); }
+
+  @media (max-width: 640px) {
+    .head { flex-direction: column; align-items: flex-start; gap: 20px; }
+  }
+</style>

@@ -1,0 +1,20 @@
+---
+// src/components/Tag.astro — pill / chip. tone: default | solid | outline-accent
+interface Props { tone?: 'default' | 'solid' | 'mono'; }
+const { tone = 'default' } = Astro.props;
+---
+<span class:list={['tag', tone]}><slot /></span>
+
+<style>
+  .tag {
+    display: inline-flex; align-items: center;
+    font-size: 13px; color: var(--color-muted-text);
+    background: var(--color-surface); border: 1px solid var(--color-border);
+    padding: 6px 14px; border-radius: 20px;
+  }
+  .solid { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+  .mono {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--color-muted-text); background: var(--color-subtle); padding: 2px 8px; border-radius: 4px;
+  }
+</style>

@@ -1,0 +1,22 @@
+---
+// src/components/Section.astro — labelled two-column section (mono label | content).
+// Used across CV and content pages. Collapses to one column on mobile.
+interface Props { label: string; divider?: boolean; }
+const { label, divider = false } = Astro.props;
+---
+<section class:list={['sec', { divider }]}>
+  <div class="label">{label}</div>
+  <div class="body"><slot /></div>
+</section>
+
+<style>
+  .sec { display: grid; grid-template-columns: 180px 1fr; gap: 44px 48px; padding: 36px 0; }
+  .sec.divider { border-top: 1px solid var(--color-border-soft, var(--color-subtle)); }
+  .label {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--color-accent); padding-top: 4px;
+  }
+  @media (max-width: 640px) {
+    .sec { grid-template-columns: 1fr; gap: 16px; padding: 28px 0; }
+  }
+</style>
