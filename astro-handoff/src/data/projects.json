@@ -1,46 +1,106 @@
 [
   {
-    "id": "asymmetric-vibration-cuff",
+    "id": "enchanted-touch",
     "category": "research",
     "year": 2025,
     "tag": "Wearable",
-    "title": { "en": "Asymmetric Vibration Cuff" },
-    "description": { "en": "A wearable device that presents a pulling sensation on the forearm.",
-                     "ja": "前腕に牽引感を提示する装着型デバイス。" },
-    "award": { "en": "Best Demo Award · WHC 2025", "ja": "ベストデモ賞 · WHC 2025" },
-    "image": "/images/projects/cuff.jpg"
+    "title": { "en": "Enchanted Touch", "ja": "Enchanted Touch" },
+    "description": {
+      "en": "A finger-mounted device that adds thermal and vibrotactile feedback to real objects — without covering the fingerpad, preserving natural texture and dexterity.",
+      "ja": "実物体に温冷・振動フィードバックを付加する指装着デバイス。指腹を覆わないため、自然な触感と器用さを保ったまま多感覚提示ができる。"
+    },
+    "award": { "en": "Honorable Mention · SIGGRAPH Asia 2025", "ja": "Honorable Mention · SIGGRAPH Asia 2025" },
+    "image": "/images/projects/enchantedtouch.jpg"
   },
   {
-    "id": "weight-illusion-toolkit",
+    "id": "alcool",
     "category": "research",
     "year": 2024,
-    "tag": "VR",
-    "title": { "en": "Weight Illusion Toolkit" },
-    "description": { "en": "An experimental platform for manipulating weight perception in VR.",
-                     "ja": "VR で重さ知覚を操作する実験基盤。" },
-    "award": { "en": "Best Presentation · SICE SI 2025", "ja": "優秀講演賞 · SICE SI 2025" },
-    "image": "/images/projects/weight.jpg"
-  },
-  {
-    "id": "electro-tactile-pad",
-    "category": "research",
-    "year": 2024,
-    "tag": "Hardware",
-    "title": { "en": "Electro-Tactile Pad" },
-    "description": { "en": "A prototype electrode array for material texture presentation.",
-                     "ja": "材質感提示のための電極アレイ試作。" },
+    "tag": "Wearable",
+    "title": { "en": "ALCool", "ja": "ALCool" },
+    "description": {
+      "en": "A wristband that harnesses the evaporative cooling of alcohol to deliver a ubiquitous cold sensation — energy-efficient and free of bulky Peltier hardware.",
+      "ja": "アルコールの気化熱を利用し、どこでも冷感を提示する腕時計型デバイス。ペルチェ不要で省電力・軽量なユビキタス冷感提示。"
+    },
     "award": null,
-    "image": "/images/projects/pad.jpg"
+    "image": "/images/projects/alcool.jpg"
   },
   {
-    "id": "personal-project-1",
-    "category": "personal",
+    "id": "chemical-tgi",
+    "category": "research",
     "year": 2024,
-    "tag": "Fan",
-    "title": { "en": "Project title", "ja": "プロジェクト名" },
-    "description": { "en": "A short summary of the personal project — what it is and why it's fun.",
-                     "ja": "個人制作の概要をここに。何を作ったか・何が面白いかを一言で。" },
-    "award": { "en": "Award name · 2024", "ja": "受賞名 · 2024" },
-    "image": "/images/projects/personal-1.jpg"
+    "tag": "Chemical",
+    "title": { "en": "Chemical Thermal Grill Illusion", "ja": "化学的サーマルグリル錯覚" },
+    "description": {
+      "en": "Inducing the thermal grill illusion — a burning sensation from interleaved warm and cold — with chemical substances instead of thermal devices, and mapping stimulus arrangement to perception.",
+      "ja": "温冷交互刺激による灼熱感（サーマルグリル錯覚）を、熱デバイスではなく化学物質で誘発。刺激配置と知覚の対応を実験的に検討。"
+    },
+    "award": { "en": "Best Paper Honorable Mention · IEEE Haptics 2022", "ja": "Best Paper Honorable Mention · IEEE Haptics 2022" },
+    "image": "/images/projects/tgi.jpg"
+  },
+  {
+    "id": "comfortable-estim",
+    "category": "research",
+    "year": 2023,
+    "tag": "Electro-Tactile",
+    "title": { "en": "Comfortable Electro-Tactile Stimulation", "ja": "快適な電気触覚提示" },
+    "description": {
+      "en": "Applying anesthetic cream to suppress the itch and pain of electrical stimulation, expanding its dynamic range for stronger, clearer pressure and vibration cues.",
+      "ja": "麻酔クリームで電気刺激の痒み・痛みを抑え、ダイナミックレンジを拡張。より強く明瞭な圧覚・振動提示を実現。"
+    },
+    "award": null,
+    "image": "/images/projects/anestheticElectro.jpg"
+  },
+  {
+    "id": "popping-sensation",
+    "category": "research",
+    "year": 2022,
+    "tag": "Chemical",
+    "title": { "en": "Popping Sensation Display", "ja": "破裂感提示" },
+    "description": {
+      "en": "Creating a popping / bursting sensation on the skin by mixing glue spray and cold spray — exploring material-based chemical haptics.",
+      "ja": "のりスプレーとコールドスプレーの混合により、皮膚上に破裂感を生成。材料ベースのケミカルハプティクスを探索。"
+    },
+    "award": null,
+    "image": "/images/projects/popping.jpg"
+  },
+  {
+    "id": "stressmincer",
+    "category": "personal",
+    "year": 2022,
+    "tag": "Demo",
+    "title": { "en": "StressMincer", "ja": "StressMincer" },
+    "description": {
+      "en": "An interactive catharsis device: put negative feelings into words, then destroy them with haptic feedback — shred, burn, or flush them away. A playful take on stress relief.",
+      "ja": "ネガティブな感情を言葉にして、触覚フィードバックとともに破壊（シュレッダー・火炎・水流）するカタルシス装置。遊び心のあるストレス解消。"
+    },
+    "award": { "en": "Best Demo · Augmented Humans 2022", "ja": "ベストデモ賞 · Augmented Humans 2022" },
+    "image": "/images/projects/stress.jpg"
+  },
+  {
+    "id": "topico",
+    "category": "personal",
+    "year": 2022,
+    "tag": "Interactive",
+    "title": { "en": "ToPiCo", "ja": "ToPiCo" },
+    "description": {
+      "en": "Indirect interaction with an aerial (mid-air) CGI character: you can't touch the floating image directly, so you manipulate a toio robot to \"touch\" it — a shared-space tactile play experience. (Unity engineer, team project.)",
+      "ja": "空中像として浮かぶキャラクターと、toio を介して『間接的に触れ合う』インタラクション作品。直接触れない空中像を toio 操作でつつくことで、共有空間での触れ合い体験を生む。（チーム制作・Unity エンジニアとして参加）"
+    },
+    "award": { "en": "XUI Award & toio New Experience Award · HEROES LEAGUE 2022", "ja": "XUI賞・toioで新体験賞 · HEROES LEAGUE 2022" },
+    "image": "/images/projects/topico.jpg"
+  },
+  {
+    "id": "hmd-creatures",
+    "category": "personal",
+    "year": 2021,
+    "tag": "VR",
+    "title": { "en": "HMD Creatures", "ja": "HMD生物" },
+    "description": {
+      "en": "An experience where an HMD becomes a living creature that parasitizes your head. A band with the HMD and pneumatic balloons lets you perceive the creature's world, controls your head motion via the hanger reflex, and conveys its pulse and warmth through a speaker and Peltier device.",
+      "ja": "ヘッドマウントディスプレイ (HMD) を生物に見立て、その生物に頭部を乗っ取られる＝寄生される体験。HMD と空気圧バルーン付きのバンドを装着し、HMD で生物の世界の知覚を、空気圧バルーンによるハンガー反射で頭の動きの制御を、スピーカーとペルチェ素子で生物の鼓動と温もりを表現する。"
+    },
+    "award": { "en": "Jury Award · IVRC 2021", "ja": "審査員賞 · IVRC 2021" },
+    "image": "/images/projects/HMDCreature.jpg"
   }
 ]

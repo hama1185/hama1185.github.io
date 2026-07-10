@@ -28,7 +28,7 @@ const honorGroups = [
       <h1>Curriculum Vitae</h1>
       <p>{t(profile.name, lang)} · {t(profile.role, lang)}</p>
     </div>
-    <Button href="#" variant="primary">{t(ui.downloadPdf, lang)}</Button>
+    <Button href={withBase('/cv.pdf')} variant="primary" download>{t(ui.downloadPdf, lang)}</Button>
   </header>
 
   <div class="sections">

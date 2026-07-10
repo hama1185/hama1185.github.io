@@ -1,9 +1,9 @@
 ---
 // src/components/Button.astro — variant: primary | secondary | ghost
-interface Props { href?: string; variant?: 'primary' | 'secondary' | 'ghost'; }
-const { href = '#', variant = 'primary' } = Astro.props;
+interface Props { href?: string; variant?: 'primary' | 'secondary' | 'ghost'; download?: boolean; }
+const { href = '#', variant = 'primary', download = false } = Astro.props;
 ---
-<a href={href} class:list={['btn', variant]}><slot /></a>
+<a href={href} class:list={['btn', variant]} download={download}><slot /></a>
 
 <style>
   .btn {

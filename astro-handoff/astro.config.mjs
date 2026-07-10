@@ -1,8 +1,7 @@
 import { defineConfig } from 'astro/config';
 
-// GitHub Pages: set `site` to your Pages URL and `base` to the repo name
-// (omit `base` if publishing to a user/org root or a custom domain).
+// GitHub Pages user site (hama1185.github.io) — published at the domain root,
+// so `site` is the Pages URL and `base` is omitted (defaults to '/').
 export default defineConfig({
-  site: 'https://USERNAME.github.io',
-  base: '/REPO_NAME',
+  site: 'https://hama1185.github.io',
 });

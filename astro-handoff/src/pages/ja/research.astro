@@ -16,13 +16,14 @@ const personal = projectsData.filter((p) => p.category === 'personal');
 
   <header class="head">
     <h1>Research</h1>
-    <p>How can we make virtual objects feel real? My research builds haptic interfaces that render
-       force, weight, and texture — combining perceptual science with wearable hardware.</p>
+    <p>人間の触覚、とりわけ触覚の錯覚を研究し、それを応用したハプティックインタフェースを設計しています。
+       化学物質による温度感覚の提示、快適な電気触覚、日常的な温冷フィードバックなどを、
+       心理物理実験とウェアラブルデバイスの両面から探究しています。</p>
   </header>
 
   <section class="themes">
     {themes.map((th, i) => (
-      <ThemeCard index={i + 1} title={th.title} description={th.description} stats={th.stats} variant="detail" lang={lang} />
+      <ThemeCard index={i + 1} title={th.title} description={th.description} stats={th.stats} image={th.image} variant="detail" lang={lang} />
     ))}
   </section>
 

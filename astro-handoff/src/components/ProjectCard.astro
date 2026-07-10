@@ -1,7 +1,7 @@
 ---
 // src/components/ProjectCard.astro
 import Placeholder from './Placeholder.astro';
-import { t, type Lang, type I18n } from '../lib/i18n';
+import { t, withBase, type Lang, type I18n } from '../lib/i18n';
 interface Props {
   year: number; tag: string;
   title: I18n; description: I18n;
@@ -11,7 +11,7 @@ interface Props {
 const { year, tag, title, description, award, image, lang = 'en' } = Astro.props;
 ---
 <article class="card">
-  <Placeholder caption="project shot" src={image} alt={t(title, lang)} />
+  <Placeholder caption="project shot" src={image ? withBase(image) : undefined} alt={t(title, lang)} />
   <div class="body">
     <div class="meta"><span class="tag">{tag}</span><span class="year">{year}</span></div>
     <h3>{t(title, lang)}</h3>

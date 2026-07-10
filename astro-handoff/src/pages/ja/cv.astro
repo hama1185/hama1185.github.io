@@ -20,7 +20,7 @@ const pubs = [...pubsData].sort((a, b) => b.year - a.year).slice(0, 4);
       <h1>Curriculum Vitae</h1>
       <p>{t(profile.name, lang)} · {t(profile.role, lang)}</p>
     </div>
-    <Button href="#" variant="primary">{t(ui.downloadPdf, lang)}</Button>
+    <Button href={withBase('/cv-ja.pdf')} variant="primary" download>{t(ui.downloadPdf, lang)}</Button>
   </header>
 
   <div class="sections">
