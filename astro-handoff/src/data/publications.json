@@ -122,6 +122,20 @@
   },
 
   {
+    "id": "vrsj-2026-chemicaltemp",
+    "year": 2026,
+    "venue": { "short": "VRSJ Annual", "type": "domestic" },
+    "title": {
+      "en": "A Preliminary Study on Modulation of Thermal Perception Induced by Application of a Capsaicin-Menthol Mixture",
+      "ja": "カプサイシン・メントール混合液の塗布による温度知覚応答変調の予備的検討"
+    },
+    "authors": ["浜崎 拓海", "梶本 裕之"],
+    "self": "浜崎 拓海",
+    "links": {},
+    "award": null
+  },
+
+  {
     "id": "si2023-alcohol",
     "year": 2023,
     "venue": { "short": "SICE SI", "type": "domestic" },

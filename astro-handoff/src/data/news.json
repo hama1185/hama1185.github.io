@@ -1,4 +1,6 @@
 [
   { "id": "n-2026-07", "date": "2026.07",
-    "text": { "en": "Launched this website.", "ja": "本サイトを公開しました。" } }
+    "text": { "en": "Launched this website.", "ja": "本サイトを公開しました。" } },
+  { "id": "n-2026-09", "date": "2026.09",
+    "text": { "en": "Attended and presented at the 30th Annual Conference of the Virtual Reality Society of Japan.", "ja": "第30回VR学会大会に参加し、発表しました。" } }
 ]
